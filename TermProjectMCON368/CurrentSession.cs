@@ -12,7 +12,17 @@ namespace TermProjectMCON368
         public string Username { get; set;}
         public string FullName { get; set; }
         public bool isLoggedIn { get; set; } = false;
-        public bool CustomerBalance { get; set;}
+        public decimal CustomerBalance { 
+            get 
+            {
+                if (isLoggedIn) 
+                {
+                    return getCurrentUserBalance();
+                }
+                return -1;
+            }
+            private set { } 
+        }
 
         public double ShoppingCartTotal;
 
@@ -66,6 +76,17 @@ namespace TermProjectMCON368
         public decimal getCartTotal() 
         {
             return ProductOperations.getCartTotal(shoppingCart);
+        }
+
+        public List<INVOICE> getInvoicesWithinDateRange(DateTime startDate, DateTime endDate) 
+        {
+            return databaseConnection.INVOICEs
+                .Where(invoice => invoice.INV_DATE >= startDate && invoice.INV_DATE <= endDate).ToList();
+        }
+
+        public decimal getCurrentUserBalance() 
+        {
+            return CustomerOperations.getUsersBalance(ID);
         }
 
 

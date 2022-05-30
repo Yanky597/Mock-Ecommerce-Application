@@ -127,6 +127,13 @@ namespace TermProjectMCON368
 				return this.GetTable<INVOICE_ROW>();
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GET_INVOICES_IN_RANGE")]
+		public ISingleResult<GET_INVOICES_IN_RANGEResult> GET_INVOICES_IN_RANGE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="STARTDATE", DbType="Date")] System.Nullable<System.DateTime> sTARTDATE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ENDDATE", DbType="Date")] System.Nullable<System.DateTime> eNDDATE)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sTARTDATE, eNDDATE);
+			return ((ISingleResult<GET_INVOICES_IN_RANGEResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CUSTOMERS")]
@@ -1418,6 +1425,122 @@ namespace TermProjectMCON368
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	public partial class GET_INVOICES_IN_RANGEResult
+	{
+		
+		private string _INV_ID;
+		
+		private string _CUS_ID;
+		
+		private string _EMP_ID;
+		
+		private System.DateTime _INV_DATE;
+		
+		private System.Nullable<decimal> _INV_TOTAL;
+		
+		private string _INV_REFCODE;
+		
+		public GET_INVOICES_IN_RANGEResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_INV_ID", DbType="VarChar(45) NOT NULL", CanBeNull=false)]
+		public string INV_ID
+		{
+			get
+			{
+				return this._INV_ID;
+			}
+			set
+			{
+				if ((this._INV_ID != value))
+				{
+					this._INV_ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CUS_ID", DbType="VarChar(45) NOT NULL", CanBeNull=false)]
+		public string CUS_ID
+		{
+			get
+			{
+				return this._CUS_ID;
+			}
+			set
+			{
+				if ((this._CUS_ID != value))
+				{
+					this._CUS_ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EMP_ID", DbType="VarChar(45)")]
+		public string EMP_ID
+		{
+			get
+			{
+				return this._EMP_ID;
+			}
+			set
+			{
+				if ((this._EMP_ID != value))
+				{
+					this._EMP_ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_INV_DATE", DbType="DateTime NOT NULL")]
+		public System.DateTime INV_DATE
+		{
+			get
+			{
+				return this._INV_DATE;
+			}
+			set
+			{
+				if ((this._INV_DATE != value))
+				{
+					this._INV_DATE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_INV_TOTAL", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> INV_TOTAL
+		{
+			get
+			{
+				return this._INV_TOTAL;
+			}
+			set
+			{
+				if ((this._INV_TOTAL != value))
+				{
+					this._INV_TOTAL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_INV_REFCODE", DbType="VarChar(100)")]
+		public string INV_REFCODE
+		{
+			get
+			{
+				return this._INV_REFCODE;
+			}
+			set
+			{
+				if ((this._INV_REFCODE != value))
+				{
+					this._INV_REFCODE = value;
+				}
 			}
 		}
 	}

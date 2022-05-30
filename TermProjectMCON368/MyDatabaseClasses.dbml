@@ -64,4 +64,16 @@
       <Association Name="PRODUCT_INVOICE_ROW" Member="PRODUCT" ThisKey="PRO_ID" OtherKey="PRO_ID" Type="PRODUCT" IsForeignKey="true" />
     </Type>
   </Table>
+  <Function Name="dbo.GET_INVOICES_IN_RANGE" Method="GET_INVOICES_IN_RANGE">
+    <Parameter Name="STARTDATE" Parameter="sTARTDATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ENDDATE" Parameter="eNDDATE" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="GET_INVOICES_IN_RANGEResult">
+      <Column Name="INV_ID" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="CUS_ID" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="EMP_ID" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="INV_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="INV_TOTAL" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="INV_REFCODE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>
