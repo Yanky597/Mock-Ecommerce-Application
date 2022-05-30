@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TermProjectDatabase" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-B14LJIK\MSSQLSERVER01;Initial Catalog=TermProjectDatabase;Integrated Security=True" SettingsObjectName="TermProjectMCON368.Properties.Settings" SettingsPropertyName="TermProjectDatabaseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CUSTOMERS" Member="CUSTOMERs">
+    <Type Name="CUSTOMER">
+      <Column Name="CUS_ID" Type="System.String" DbType="VarChar(45) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CUS_LNAME" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="CUS_FNAME" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="CUS_PHONE" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="CUS_EMAIL" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="CUS_ADDRESS" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="CUS_ZIPCODE" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Association Name="CUSTOMER_LOGIN" Member="LOGINs" ThisKey="CUS_ID" OtherKey="CUS_ID" Type="LOGIN" />
+      <Association Name="CUSTOMER_CUSTOMER_BALANCE" Member="CUSTOMER_BALANCEs" ThisKey="CUS_ID" OtherKey="CUS_ID" Type="CUSTOMER_BALANCE" />
+      <Association Name="CUSTOMER_INVOICE" Member="INVOICEs" ThisKey="CUS_ID" OtherKey="CUS_ID" Type="INVOICE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOGIN" Member="LOGINs">
+    <Type Name="LOGIN">
+      <Column Name="CUS_ID" Type="System.String" DbType="VarChar(45) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LOG_PASSWORD" Type="System.String" DbType="VarChar(256) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LOG_USERNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="CUSTOMER_LOGIN" Member="CUSTOMER" ThisKey="CUS_ID" OtherKey="CUS_ID" Type="CUSTOMER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CUSTOMER_BALANCES" Member="CUSTOMER_BALANCEs">
+    <Type Name="CUSTOMER_BALANCE">
+      <Column Name="CUS_ID" Type="System.String" DbType="VarChar(45) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CUS_BALANCE" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="CUSTOMER_CUSTOMER_BALANCE" Member="CUSTOMER" ThisKey="CUS_ID" OtherKey="CUS_ID" Type="CUSTOMER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PRODUCTS" Member="PRODUCTs">
+    <Type Name="PRODUCT">
+      <Column Name="PRO_ID" Type="System.String" DbType="VarChar(45) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PRO_NAME" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="PRO_SNUM" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PRO_COST_P" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="PRO_SALE_P" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="PRO_START_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="PRODUCT_INVOICE_ROW" Member="INVOICE_ROWs" ThisKey="PRO_ID" OtherKey="PRO_ID" Type="INVOICE_ROW" />
+    </Type>
+  </Table>
+  <Table Name="dbo.INVOICES" Member="INVOICEs">
+    <Type Name="INVOICE">
+      <Column Name="INV_ID" Type="System.String" DbType="VarChar(45) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CUS_ID" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="EMP_ID" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="INV_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="INV_TOTAL" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="INV_REFCODE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="INVOICE_INVOICE_ROW" Member="INVOICE_ROWs" ThisKey="INV_ID" OtherKey="INV_ID" Type="INVOICE_ROW" />
+      <Association Name="CUSTOMER_INVOICE" Member="CUSTOMER" ThisKey="CUS_ID" OtherKey="CUS_ID" Type="CUSTOMER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.INVOICE_ROW" Member="INVOICE_ROWs">
+    <Type Name="INVOICE_ROW">
+      <Column Name="INV_ID" Type="System.String" DbType="VarChar(45) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PRO_ID" Type="System.String" DbType="VarChar(45) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="INR_PRICE" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="INR_QUANTITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="INR_DISCOUNT" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="INR_FINAL_PRICE" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Association Name="INVOICE_INVOICE_ROW" Member="INVOICE" ThisKey="INV_ID" OtherKey="INV_ID" Type="INVOICE" IsForeignKey="true" />
+      <Association Name="PRODUCT_INVOICE_ROW" Member="PRODUCT" ThisKey="PRO_ID" OtherKey="PRO_ID" Type="PRODUCT" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
