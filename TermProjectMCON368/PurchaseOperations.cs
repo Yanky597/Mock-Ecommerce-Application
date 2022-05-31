@@ -8,18 +8,39 @@ namespace TermProjectMCON368
 {
     static class PurchaseOperations
     {
-        static DataClasses1DataContext databaseConnection;
+        public static DataClasses1DataContext dbConnection;
 
         public static decimal currentCustomersBalance(String customerID)
         {
-            return databaseConnection.CUSTOMER_BALANCEs
+            return dbConnection.CUSTOMER_BALANCEs
                 .Where(customer => customer.CUS_ID == customerID)
                 .Select(customer => customer.CUS_BALANCE).First();
         }
 
         public static void addItemToCart(String productId, Dictionary<String, int> shoppingCart)
         {
-            shoppingCart[productId] += 1;
+            if (shoppingCart.ContainsKey(productId)) 
+            {
+                shoppingCart[productId] += 1;
+                return;
+            }
+
+            shoppingCart.Add(productId, 1);
+        }
+
+        public static void deleteItemFromCart(String productId, Dictionary<String, int> shoppingCart)
+        {
+            // if the shopping cart item has a quantity > 0
+            // remove one element from the cart.
+            // else delete the item from the cart
+            // if quantity > 1, then after deleting a product there will be at least 1 product left
+
+            if (shoppingCart[productId] > 1) 
+            {
+                shoppingCart[productId] -= 1;
+            }          
+       
+            shoppingCart.Remove(productId);
         }
 
         public static bool userCanMakePurchase(String userID, decimal ShoppingCartTotal)
@@ -41,7 +62,7 @@ namespace TermProjectMCON368
 
         public static void updateUserAccountBalance(String userID, decimal shoppingCartTotal)
         {
-            databaseConnection.CUSTOMER_BALANCEs
+            dbConnection.CUSTOMER_BALANCEs
                 .Where(customer => customer.CUS_ID == userID)
                 .First().CUS_BALANCE -= shoppingCartTotal;
         }
@@ -57,8 +78,8 @@ namespace TermProjectMCON368
                 INV_REFCODE = "PROMO123",
                 INV_TOTAL = ProductOperations.getCartTotal(shoppingCart),
             };
-            databaseConnection.INVOICEs.InsertOnSubmit(createInvoice);
-            databaseConnection.SubmitChanges();
+            dbConnection.INVOICEs.InsertOnSubmit(createInvoice);
+            dbConnection.SubmitChanges();
         }
 
         public static void createInvoiceRows(String invoiceID, Dictionary<String, int> shoppingCart) 
@@ -77,8 +98,8 @@ namespace TermProjectMCON368
                     INR_DISCOUNT = 0,
                     INR_FINAL_PRICE = productPrice * product.Value
                 };
-                databaseConnection.INVOICE_ROWs.InsertOnSubmit(invoiceRow);
-                databaseConnection.SubmitChanges();
+                dbConnection.INVOICE_ROWs.InsertOnSubmit(invoiceRow);
+                dbConnection.SubmitChanges();
             }
         }
 
@@ -87,7 +108,7 @@ namespace TermProjectMCON368
         {
 
             // gets the highest generated invoice Id and increments it by one
-            return (Convert.ToInt32(databaseConnection.INVOICEs
+            return (Convert.ToInt32(dbConnection.INVOICEs
                 .OrderByDescending(row => row.INV_ID).Select(row => row.INV_ID).First()) + 1).ToString();
             
         }

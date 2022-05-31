@@ -8,7 +8,7 @@ namespace TermProjectMCON368
 {
     internal class CurrentSession
     {
-        public string ID { get; set; }
+        public string ID { get; set; } = "100195";
         public string Username { get; set; }
         public string FullName
         {
@@ -39,7 +39,15 @@ namespace TermProjectMCON368
 
         private Dictionary<String, int> shoppingCart = new Dictionary<String, int>();
 
-        DataClasses1DataContext databaseConnection;
+        DataClasses1DataContext dbConnection;
+
+        public CurrentSession(DataClasses1DataContext dbConnection) 
+        {
+            this.dbConnection = dbConnection;
+            CustomerOperations.dbConnection = dbConnection;
+            ProductOperations.dbConnection = dbConnection;
+            PurchaseOperations.dbConnection = dbConnection;
+        }
 
         public bool isValidUser(String username, String password)
         {
@@ -49,27 +57,21 @@ namespace TermProjectMCON368
                 return false;
             }
 
-            var isValid = databaseConnection.LOGINs.Where(user => user.LOG_USERNAME == username && user.LOG_PASSWORD == password).Any();
-
-            if (isValid)
+            var isVerified = dbConnection.LOGINs.Where(user => user.LOG_USERNAME == username && user.LOG_PASSWORD == password).Any();
+            if (isVerified)
             {
                 setIdIfUserIsValid(username);
+                isLoggedIn = true;
             }
+            return isVerified;
 
-            return isValid;
         }
 
         public void setIdIfUserIsValid(String username)
         {
-            var getId = databaseConnection
+            ID = dbConnection
                  .LOGINs
-                 .Where(user => user.LOG_USERNAME == username);
-
-            if (getId.Count() == 1)
-            {
-                getId.ToList().ForEach(userID => ID = userID.CUS_ID);
-            }
-
+                 .Where(user => user.LOG_USERNAME == username).First().CUS_ID;
         }
 
         public int getCartSize()
@@ -91,7 +93,7 @@ namespace TermProjectMCON368
 
         public List<INVOICE> getInvoicesWithinDateRange(DateTime startDate, DateTime endDate)
         {
-            return databaseConnection.INVOICEs
+            return dbConnection.INVOICEs
                 .Where(invoice => invoice.INV_DATE >= startDate && invoice.INV_DATE <= endDate).ToList();
         }
 
@@ -102,6 +104,11 @@ namespace TermProjectMCON368
 
 
         // public addUser(newUserForm userInfo, String username, password)
+
+        public void setSessionToLoggedOut() 
+        {
+            isLoggedIn = false;
+        }
 
 
 

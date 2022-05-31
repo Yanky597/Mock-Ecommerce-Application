@@ -8,16 +8,16 @@ namespace TermProjectMCON368
 {
     static class ProductOperations
     {
-        static DataClasses1DataContext databaseConnection;
+        public static DataClasses1DataContext dbConnection;
 
         public static List<String> getListOfProductNames()
         {
-            return databaseConnection.PRODUCTs.Select(product => product.PRO_NAME).ToList();
+            return dbConnection.PRODUCTs.Select(product => product.PRO_NAME).ToList();
         }
 
         public static decimal getProductPrice(String productID) 
         {
-            return databaseConnection.PRODUCTs
+            return dbConnection.PRODUCTs
                 .Where(product => product.PRO_ID == productID)
                 .Select(product => product.PRO_SALE_P).First();
         }
