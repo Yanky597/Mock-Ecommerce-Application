@@ -10,8 +10,8 @@
       <Column Name="CUS_ADDRESS" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
       <Column Name="CUS_ZIPCODE" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
       <Association Name="CUSTOMER_LOGIN" Member="LOGINs" ThisKey="CUS_ID" OtherKey="CUS_ID" Type="LOGIN" />
-      <Association Name="CUSTOMER_CUSTOMER_BALANCE" Member="CUSTOMER_BALANCEs" ThisKey="CUS_ID" OtherKey="CUS_ID" Type="CUSTOMER_BALANCE" />
       <Association Name="CUSTOMER_INVOICE" Member="INVOICEs" ThisKey="CUS_ID" OtherKey="CUS_ID" Type="INVOICE" />
+      <Association Name="CUSTOMER_CUSTOMER_BALANCE" Member="CUSTOMER_BALANCEs" ThisKey="CUS_ID" OtherKey="CUS_ID" Type="CUSTOMER_BALANCE" />
     </Type>
   </Table>
   <Table Name="dbo.LOGIN" Member="LOGINs">
@@ -20,13 +20,6 @@
       <Column Name="LOG_PASSWORD" Type="System.String" DbType="VarChar(256) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="LOG_USERNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="CUSTOMER_LOGIN" Member="CUSTOMER" ThisKey="CUS_ID" OtherKey="CUS_ID" Type="CUSTOMER" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.CUSTOMER_BALANCES" Member="CUSTOMER_BALANCEs">
-    <Type Name="CUSTOMER_BALANCE">
-      <Column Name="CUS_ID" Type="System.String" DbType="VarChar(45) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="CUS_BALANCE" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="CUSTOMER_CUSTOMER_BALANCE" Member="CUSTOMER" ThisKey="CUS_ID" OtherKey="CUS_ID" Type="CUSTOMER" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.PRODUCTS" Member="PRODUCTs">
@@ -62,6 +55,13 @@
       <Column Name="INR_FINAL_PRICE" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
       <Association Name="INVOICE_INVOICE_ROW" Member="INVOICE" ThisKey="INV_ID" OtherKey="INV_ID" Type="INVOICE" IsForeignKey="true" />
       <Association Name="PRODUCT_INVOICE_ROW" Member="PRODUCT" ThisKey="PRO_ID" OtherKey="PRO_ID" Type="PRODUCT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CUSTOMER_BALANCES" Member="CUSTOMER_BALANCEs">
+    <Type Name="CUSTOMER_BALANCE">
+      <Column Name="CUS_ID" Type="System.String" DbType="VarChar(45) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CUS_BALANCE" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Association Name="CUSTOMER_CUSTOMER_BALANCE" Member="CUSTOMER" ThisKey="CUS_ID" OtherKey="CUS_ID" Type="CUSTOMER" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.GET_INVOICES_IN_RANGE" Method="GET_INVOICES_IN_RANGE">

@@ -34,13 +34,19 @@ namespace TermProjectMCON368
             // remove one element from the cart.
             // else delete the item from the cart
             // if quantity > 1, then after deleting a product there will be at least 1 product left
-
-            if (shoppingCart[productId] > 1) 
+            if (shoppingCart.ContainsKey(productId)) 
             {
-                shoppingCart[productId] -= 1;
-            }          
+                if (shoppingCart[productId] > 1)
+                {
+                    shoppingCart[productId] -= 1;
+                }
+                else 
+                {
+                    shoppingCart.Remove(productId);
+                }
+            }
+      
        
-            shoppingCart.Remove(productId);
         }
 
         public static bool userCanMakePurchase(String userID, decimal ShoppingCartTotal)
@@ -48,23 +54,37 @@ namespace TermProjectMCON368
             return currentCustomersBalance(userID) >= ShoppingCartTotal;
         }
 
-        public static void submitOrder(String userID, Dictionary<String, int> shoppingCart)
+        public static bool submitOrder(String userID, Dictionary<String, int> shoppingCart)
         {
 
-            if (userCanMakePurchase(userID, ProductOperations.getCartTotal(shoppingCart))) 
+            if (userCanMakePurchase(userID, ProductOperations.getCartTotal(shoppingCart)) && shoppingCart.Count > 0) 
             {
                 String invoiceID = generateAndGetUniqueId();
-                updateUserAccountBalance(userID, ProductOperations.getCartTotal(shoppingCart));
                 createInvoice(userID, invoiceID, shoppingCart);
                 createInvoiceRows(invoiceID, shoppingCart);
+                updateUserAccountBalance(userID, ProductOperations.getCartTotal(shoppingCart));
+                return true;
             }
+
+            return false;
         }
 
         public static void updateUserAccountBalance(String userID, decimal shoppingCartTotal)
         {
-            dbConnection.CUSTOMER_BALANCEs
-                .Where(customer => customer.CUS_ID == userID)
-                .First().CUS_BALANCE -= shoppingCartTotal;
+
+
+            CUSTOMER_BALANCE currentUser = dbConnection.CUSTOMER_BALANCEs
+                 .Where(customer => customer.CUS_ID == userID)
+                 .First();
+
+            currentUser.CUS_BALANCE = currentUser.CUS_BALANCE - shoppingCartTotal;
+            Console.WriteLine(currentUser.CUS_BALANCE);
+
+            //updateCustomerBalance.CUS_BALANCE = updateCustomerBalance.CUS_BALANCE - shoppingCartTotal;
+
+            //dbConnection.CUSTOMER_BALANCEs.InsertOnSubmit(currentUser);
+            dbConnection.SubmitChanges();
+            Console.WriteLine("This is after the submit " + currentUser.CUS_BALANCE);
         }
 
         public static void createInvoice(String customerID, String invoiceID, Dictionary<String, int> shoppingCart) 
@@ -74,7 +94,7 @@ namespace TermProjectMCON368
                 INV_ID = invoiceID,
                 CUS_ID = customerID,
                 EMP_ID = null,
-                INV_DATE = new DateTime(),
+                INV_DATE = DateTime.Now,
                 INV_REFCODE = "PROMO123",
                 INV_TOTAL = ProductOperations.getCartTotal(shoppingCart),
             };
@@ -84,7 +104,7 @@ namespace TermProjectMCON368
 
         public static void createInvoiceRows(String invoiceID, Dictionary<String, int> shoppingCart) 
         {
-            INVOICE_ROW invoiceRow;
+            INVOICE_ROW invoiceRow = new INVOICE_ROW();
 
             foreach (var product in shoppingCart) 
             {
@@ -109,7 +129,7 @@ namespace TermProjectMCON368
 
             // gets the highest generated invoice Id and increments it by one
             return (Convert.ToInt32(dbConnection.INVOICEs
-                .OrderByDescending(row => row.INV_ID).Select(row => row.INV_ID).First()) + 1).ToString();
+                .OrderByDescending(row => row.INV_DATE).Select(row => row.INV_ID).First()) + 1).ToString();
             
         }
 

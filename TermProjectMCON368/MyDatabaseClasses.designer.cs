@@ -36,9 +36,6 @@ namespace TermProjectMCON368
     partial void InsertLOGIN(LOGIN instance);
     partial void UpdateLOGIN(LOGIN instance);
     partial void DeleteLOGIN(LOGIN instance);
-    partial void InsertCUSTOMER_BALANCE(CUSTOMER_BALANCE instance);
-    partial void UpdateCUSTOMER_BALANCE(CUSTOMER_BALANCE instance);
-    partial void DeleteCUSTOMER_BALANCE(CUSTOMER_BALANCE instance);
     partial void InsertPRODUCT(PRODUCT instance);
     partial void UpdatePRODUCT(PRODUCT instance);
     partial void DeletePRODUCT(PRODUCT instance);
@@ -48,6 +45,9 @@ namespace TermProjectMCON368
     partial void InsertINVOICE_ROW(INVOICE_ROW instance);
     partial void UpdateINVOICE_ROW(INVOICE_ROW instance);
     partial void DeleteINVOICE_ROW(INVOICE_ROW instance);
+    partial void InsertCUSTOMER_BALANCE(CUSTOMER_BALANCE instance);
+    partial void UpdateCUSTOMER_BALANCE(CUSTOMER_BALANCE instance);
+    partial void DeleteCUSTOMER_BALANCE(CUSTOMER_BALANCE instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
@@ -96,14 +96,6 @@ namespace TermProjectMCON368
 			}
 		}
 		
-		public System.Data.Linq.Table<CUSTOMER_BALANCE> CUSTOMER_BALANCEs
-		{
-			get
-			{
-				return this.GetTable<CUSTOMER_BALANCE>();
-			}
-		}
-		
 		public System.Data.Linq.Table<PRODUCT> PRODUCTs
 		{
 			get
@@ -125,6 +117,14 @@ namespace TermProjectMCON368
 			get
 			{
 				return this.GetTable<INVOICE_ROW>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CUSTOMER_BALANCE> CUSTOMER_BALANCEs
+		{
+			get
+			{
+				return this.GetTable<CUSTOMER_BALANCE>();
 			}
 		}
 		
@@ -158,9 +158,9 @@ namespace TermProjectMCON368
 		
 		private EntitySet<LOGIN> _LOGINs;
 		
-		private EntitySet<CUSTOMER_BALANCE> _CUSTOMER_BALANCEs;
-		
 		private EntitySet<INVOICE> _INVOICEs;
+		
+		private EntitySet<CUSTOMER_BALANCE> _CUSTOMER_BALANCEs;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -185,8 +185,8 @@ namespace TermProjectMCON368
 		public CUSTOMER()
 		{
 			this._LOGINs = new EntitySet<LOGIN>(new Action<LOGIN>(this.attach_LOGINs), new Action<LOGIN>(this.detach_LOGINs));
-			this._CUSTOMER_BALANCEs = new EntitySet<CUSTOMER_BALANCE>(new Action<CUSTOMER_BALANCE>(this.attach_CUSTOMER_BALANCEs), new Action<CUSTOMER_BALANCE>(this.detach_CUSTOMER_BALANCEs));
 			this._INVOICEs = new EntitySet<INVOICE>(new Action<INVOICE>(this.attach_INVOICEs), new Action<INVOICE>(this.detach_INVOICEs));
+			this._CUSTOMER_BALANCEs = new EntitySet<CUSTOMER_BALANCE>(new Action<CUSTOMER_BALANCE>(this.attach_CUSTOMER_BALANCEs), new Action<CUSTOMER_BALANCE>(this.detach_CUSTOMER_BALANCEs));
 			OnCreated();
 		}
 		
@@ -343,19 +343,6 @@ namespace TermProjectMCON368
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CUSTOMER_CUSTOMER_BALANCE", Storage="_CUSTOMER_BALANCEs", ThisKey="CUS_ID", OtherKey="CUS_ID")]
-		public EntitySet<CUSTOMER_BALANCE> CUSTOMER_BALANCEs
-		{
-			get
-			{
-				return this._CUSTOMER_BALANCEs;
-			}
-			set
-			{
-				this._CUSTOMER_BALANCEs.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CUSTOMER_INVOICE", Storage="_INVOICEs", ThisKey="CUS_ID", OtherKey="CUS_ID")]
 		public EntitySet<INVOICE> INVOICEs
 		{
@@ -366,6 +353,19 @@ namespace TermProjectMCON368
 			set
 			{
 				this._INVOICEs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CUSTOMER_CUSTOMER_BALANCE", Storage="_CUSTOMER_BALANCEs", ThisKey="CUS_ID", OtherKey="CUS_ID")]
+		public EntitySet<CUSTOMER_BALANCE> CUSTOMER_BALANCEs
+		{
+			get
+			{
+				return this._CUSTOMER_BALANCEs;
+			}
+			set
+			{
+				this._CUSTOMER_BALANCEs.Assign(value);
 			}
 		}
 		
@@ -401,18 +401,6 @@ namespace TermProjectMCON368
 			entity.CUSTOMER = null;
 		}
 		
-		private void attach_CUSTOMER_BALANCEs(CUSTOMER_BALANCE entity)
-		{
-			this.SendPropertyChanging();
-			entity.CUSTOMER = this;
-		}
-		
-		private void detach_CUSTOMER_BALANCEs(CUSTOMER_BALANCE entity)
-		{
-			this.SendPropertyChanging();
-			entity.CUSTOMER = null;
-		}
-		
 		private void attach_INVOICEs(INVOICE entity)
 		{
 			this.SendPropertyChanging();
@@ -420,6 +408,18 @@ namespace TermProjectMCON368
 		}
 		
 		private void detach_INVOICEs(INVOICE entity)
+		{
+			this.SendPropertyChanging();
+			entity.CUSTOMER = null;
+		}
+		
+		private void attach_CUSTOMER_BALANCEs(CUSTOMER_BALANCE entity)
+		{
+			this.SendPropertyChanging();
+			entity.CUSTOMER = this;
+		}
+		
+		private void detach_CUSTOMER_BALANCEs(CUSTOMER_BALANCE entity)
 		{
 			this.SendPropertyChanging();
 			entity.CUSTOMER = null;
@@ -545,133 +545,6 @@ namespace TermProjectMCON368
 					if ((value != null))
 					{
 						value.LOGINs.Add(this);
-						this._CUS_ID = value.CUS_ID;
-					}
-					else
-					{
-						this._CUS_ID = default(string);
-					}
-					this.SendPropertyChanged("CUSTOMER");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CUSTOMER_BALANCES")]
-	public partial class CUSTOMER_BALANCE : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _CUS_ID;
-		
-		private decimal _CUS_BALANCE;
-		
-		private EntityRef<CUSTOMER> _CUSTOMER;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCUS_IDChanging(string value);
-    partial void OnCUS_IDChanged();
-    partial void OnCUS_BALANCEChanging(decimal value);
-    partial void OnCUS_BALANCEChanged();
-    #endregion
-		
-		public CUSTOMER_BALANCE()
-		{
-			this._CUSTOMER = default(EntityRef<CUSTOMER>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CUS_ID", DbType="VarChar(45) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string CUS_ID
-		{
-			get
-			{
-				return this._CUS_ID;
-			}
-			set
-			{
-				if ((this._CUS_ID != value))
-				{
-					if (this._CUSTOMER.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCUS_IDChanging(value);
-					this.SendPropertyChanging();
-					this._CUS_ID = value;
-					this.SendPropertyChanged("CUS_ID");
-					this.OnCUS_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CUS_BALANCE", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
-		public decimal CUS_BALANCE
-		{
-			get
-			{
-				return this._CUS_BALANCE;
-			}
-			set
-			{
-				if ((this._CUS_BALANCE != value))
-				{
-					this.OnCUS_BALANCEChanging(value);
-					this.SendPropertyChanging();
-					this._CUS_BALANCE = value;
-					this.SendPropertyChanged("CUS_BALANCE");
-					this.OnCUS_BALANCEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CUSTOMER_CUSTOMER_BALANCE", Storage="_CUSTOMER", ThisKey="CUS_ID", OtherKey="CUS_ID", IsForeignKey=true)]
-		public CUSTOMER CUSTOMER
-		{
-			get
-			{
-				return this._CUSTOMER.Entity;
-			}
-			set
-			{
-				CUSTOMER previousValue = this._CUSTOMER.Entity;
-				if (((previousValue != value) 
-							|| (this._CUSTOMER.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._CUSTOMER.Entity = null;
-						previousValue.CUSTOMER_BALANCEs.Remove(this);
-					}
-					this._CUSTOMER.Entity = value;
-					if ((value != null))
-					{
-						value.CUSTOMER_BALANCEs.Add(this);
 						this._CUS_ID = value.CUS_ID;
 					}
 					else
@@ -1404,6 +1277,133 @@ namespace TermProjectMCON368
 						this._PRO_ID = default(string);
 					}
 					this.SendPropertyChanged("PRODUCT");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CUSTOMER_BALANCES")]
+	public partial class CUSTOMER_BALANCE : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _CUS_ID;
+		
+		private decimal _CUS_BALANCE;
+		
+		private EntityRef<CUSTOMER> _CUSTOMER;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCUS_IDChanging(string value);
+    partial void OnCUS_IDChanged();
+    partial void OnCUS_BALANCEChanging(decimal value);
+    partial void OnCUS_BALANCEChanged();
+    #endregion
+		
+		public CUSTOMER_BALANCE()
+		{
+			this._CUSTOMER = default(EntityRef<CUSTOMER>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CUS_ID", DbType="VarChar(45) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string CUS_ID
+		{
+			get
+			{
+				return this._CUS_ID;
+			}
+			set
+			{
+				if ((this._CUS_ID != value))
+				{
+					if (this._CUSTOMER.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCUS_IDChanging(value);
+					this.SendPropertyChanging();
+					this._CUS_ID = value;
+					this.SendPropertyChanged("CUS_ID");
+					this.OnCUS_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CUS_BALANCE", DbType="Decimal(18,0) NOT NULL")]
+		public decimal CUS_BALANCE
+		{
+			get
+			{
+				return this._CUS_BALANCE;
+			}
+			set
+			{
+				if ((this._CUS_BALANCE != value))
+				{
+					this.OnCUS_BALANCEChanging(value);
+					this.SendPropertyChanging();
+					this._CUS_BALANCE = value;
+					this.SendPropertyChanged("CUS_BALANCE");
+					this.OnCUS_BALANCEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CUSTOMER_CUSTOMER_BALANCE", Storage="_CUSTOMER", ThisKey="CUS_ID", OtherKey="CUS_ID", IsForeignKey=true)]
+		public CUSTOMER CUSTOMER
+		{
+			get
+			{
+				return this._CUSTOMER.Entity;
+			}
+			set
+			{
+				CUSTOMER previousValue = this._CUSTOMER.Entity;
+				if (((previousValue != value) 
+							|| (this._CUSTOMER.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._CUSTOMER.Entity = null;
+						previousValue.CUSTOMER_BALANCEs.Remove(this);
+					}
+					this._CUSTOMER.Entity = value;
+					if ((value != null))
+					{
+						value.CUSTOMER_BALANCEs.Add(this);
+						this._CUS_ID = value.CUS_ID;
+					}
+					else
+					{
+						this._CUS_ID = default(string);
+					}
+					this.SendPropertyChanged("CUSTOMER");
 				}
 			}
 		}

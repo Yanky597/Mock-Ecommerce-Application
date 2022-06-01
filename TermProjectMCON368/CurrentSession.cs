@@ -39,7 +39,25 @@ namespace TermProjectMCON368
 
         private Dictionary<String, int> shoppingCart = new Dictionary<String, int>();
 
+        public void clearCart() 
+        {
+            shoppingCart.Clear();
+        }
+
         DataClasses1DataContext dbConnection;
+
+        public bool submitOrder()
+        {
+            return PurchaseOperations.submitOrder(ID, shoppingCart);
+        }
+
+        public void resetDbConnection(DataClasses1DataContext newDbConnection) 
+        {
+            dbConnection = newDbConnection;
+            CustomerOperations.dbConnection = newDbConnection;
+            ProductOperations.dbConnection = newDbConnection;
+            PurchaseOperations.dbConnection = newDbConnection;
+        }
 
         public CurrentSession(DataClasses1DataContext dbConnection) 
         {
@@ -65,6 +83,20 @@ namespace TermProjectMCON368
             }
             return isVerified;
 
+        }
+
+        public List<String> GetShoppingCartAsList() 
+        {
+            List<String> shoppingCartAsList = new List<String>();
+            String ItemName;
+
+            foreach (var item in shoppingCart) 
+            {
+                ItemName = dbConnection.PRODUCTs.Where(prod => prod.PRO_ID == item.Key).First().PRO_NAME;
+                shoppingCartAsList.Add($"x{item.Value} {ItemName} ${ProductOperations.getProductPrice(item.Key) * item.Value}");
+            }
+
+            return shoppingCartAsList;
         }
 
         public void setIdIfUserIsValid(String username)
@@ -108,6 +140,16 @@ namespace TermProjectMCON368
         public void setSessionToLoggedOut() 
         {
             isLoggedIn = false;
+        }
+
+        public void addItemToCart(String ProductID) 
+        {
+            PurchaseOperations.addItemToCart(ProductID, shoppingCart);
+        }
+
+        public void deleteItemFromCart(String ProductID)
+        {
+            PurchaseOperations.deleteItemFromCart(ProductID, shoppingCart);
         }
 
 
