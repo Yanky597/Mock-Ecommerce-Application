@@ -160,7 +160,7 @@ namespace TermProjectMCON368
 		
 		private EntitySet<INVOICE> _INVOICEs;
 		
-		private EntitySet<CUSTOMER_BALANCE> _CUSTOMER_BALANCEs;
+		private EntityRef<CUSTOMER_BALANCE> _CUSTOMER_BALANCE;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -186,7 +186,7 @@ namespace TermProjectMCON368
 		{
 			this._LOGINs = new EntitySet<LOGIN>(new Action<LOGIN>(this.attach_LOGINs), new Action<LOGIN>(this.detach_LOGINs));
 			this._INVOICEs = new EntitySet<INVOICE>(new Action<INVOICE>(this.attach_INVOICEs), new Action<INVOICE>(this.detach_INVOICEs));
-			this._CUSTOMER_BALANCEs = new EntitySet<CUSTOMER_BALANCE>(new Action<CUSTOMER_BALANCE>(this.attach_CUSTOMER_BALANCEs), new Action<CUSTOMER_BALANCE>(this.detach_CUSTOMER_BALANCEs));
+			this._CUSTOMER_BALANCE = default(EntityRef<CUSTOMER_BALANCE>);
 			OnCreated();
 		}
 		
@@ -356,16 +356,32 @@ namespace TermProjectMCON368
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CUSTOMER_CUSTOMER_BALANCE", Storage="_CUSTOMER_BALANCEs", ThisKey="CUS_ID", OtherKey="CUS_ID")]
-		public EntitySet<CUSTOMER_BALANCE> CUSTOMER_BALANCEs
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CUSTOMER_CUSTOMER_BALANCE", Storage="_CUSTOMER_BALANCE", ThisKey="CUS_ID", OtherKey="CUS_ID", IsUnique=true, IsForeignKey=false)]
+		public CUSTOMER_BALANCE CUSTOMER_BALANCE
 		{
 			get
 			{
-				return this._CUSTOMER_BALANCEs;
+				return this._CUSTOMER_BALANCE.Entity;
 			}
 			set
 			{
-				this._CUSTOMER_BALANCEs.Assign(value);
+				CUSTOMER_BALANCE previousValue = this._CUSTOMER_BALANCE.Entity;
+				if (((previousValue != value) 
+							|| (this._CUSTOMER_BALANCE.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._CUSTOMER_BALANCE.Entity = null;
+						previousValue.CUSTOMER = null;
+					}
+					this._CUSTOMER_BALANCE.Entity = value;
+					if ((value != null))
+					{
+						value.CUSTOMER = this;
+					}
+					this.SendPropertyChanged("CUSTOMER_BALANCE");
+				}
 			}
 		}
 		
@@ -408,18 +424,6 @@ namespace TermProjectMCON368
 		}
 		
 		private void detach_INVOICEs(INVOICE entity)
-		{
-			this.SendPropertyChanging();
-			entity.CUSTOMER = null;
-		}
-		
-		private void attach_CUSTOMER_BALANCEs(CUSTOMER_BALANCE entity)
-		{
-			this.SendPropertyChanging();
-			entity.CUSTOMER = this;
-		}
-		
-		private void detach_CUSTOMER_BALANCEs(CUSTOMER_BALANCE entity)
 		{
 			this.SendPropertyChanging();
 			entity.CUSTOMER = null;
@@ -1312,6 +1316,8 @@ namespace TermProjectMCON368
 		
 		private decimal _CUS_BALANCE;
 		
+		private System.Nullable<decimal> _BALANCE_DUE;
+		
 		private EntityRef<CUSTOMER> _CUSTOMER;
 		
     #region Extensibility Method Definitions
@@ -1322,6 +1328,8 @@ namespace TermProjectMCON368
     partial void OnCUS_IDChanged();
     partial void OnCUS_BALANCEChanging(decimal value);
     partial void OnCUS_BALANCEChanged();
+    partial void OnBALANCE_DUEChanging(System.Nullable<decimal> value);
+    partial void OnBALANCE_DUEChanged();
     #endregion
 		
 		public CUSTOMER_BALANCE()
@@ -1374,6 +1382,26 @@ namespace TermProjectMCON368
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BALANCE_DUE", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> BALANCE_DUE
+		{
+			get
+			{
+				return this._BALANCE_DUE;
+			}
+			set
+			{
+				if ((this._BALANCE_DUE != value))
+				{
+					this.OnBALANCE_DUEChanging(value);
+					this.SendPropertyChanging();
+					this._BALANCE_DUE = value;
+					this.SendPropertyChanged("BALANCE_DUE");
+					this.OnBALANCE_DUEChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CUSTOMER_CUSTOMER_BALANCE", Storage="_CUSTOMER", ThisKey="CUS_ID", OtherKey="CUS_ID", IsForeignKey=true)]
 		public CUSTOMER CUSTOMER
 		{
@@ -1391,12 +1419,12 @@ namespace TermProjectMCON368
 					if ((previousValue != null))
 					{
 						this._CUSTOMER.Entity = null;
-						previousValue.CUSTOMER_BALANCEs.Remove(this);
+						previousValue.CUSTOMER_BALANCE = null;
 					}
 					this._CUSTOMER.Entity = value;
 					if ((value != null))
 					{
-						value.CUSTOMER_BALANCEs.Add(this);
+						value.CUSTOMER_BALANCE = this;
 						this._CUS_ID = value.CUS_ID;
 					}
 					else

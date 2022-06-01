@@ -134,6 +134,11 @@ namespace TermProjectMCON368
             return CustomerOperations.getUsersBalance(ID);
         }
 
+        public decimal getCurrentUsersBalanceDue() 
+        {
+            return CustomerOperations.getUsersBalanceDue(ID);
+        }
+
 
         // public addUser(newUserForm userInfo, String username, password)
 

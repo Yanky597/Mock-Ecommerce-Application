@@ -11,7 +11,7 @@
       <Column Name="CUS_ZIPCODE" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
       <Association Name="CUSTOMER_LOGIN" Member="LOGINs" ThisKey="CUS_ID" OtherKey="CUS_ID" Type="LOGIN" />
       <Association Name="CUSTOMER_INVOICE" Member="INVOICEs" ThisKey="CUS_ID" OtherKey="CUS_ID" Type="INVOICE" />
-      <Association Name="CUSTOMER_CUSTOMER_BALANCE" Member="CUSTOMER_BALANCEs" ThisKey="CUS_ID" OtherKey="CUS_ID" Type="CUSTOMER_BALANCE" />
+      <Association Name="CUSTOMER_CUSTOMER_BALANCE" Member="CUSTOMER_BALANCE" ThisKey="CUS_ID" OtherKey="CUS_ID" Type="CUSTOMER_BALANCE" Cardinality="One" />
     </Type>
   </Table>
   <Table Name="dbo.LOGIN" Member="LOGINs">
@@ -61,6 +61,7 @@
     <Type Name="CUSTOMER_BALANCE">
       <Column Name="CUS_ID" Type="System.String" DbType="VarChar(45) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="CUS_BALANCE" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="BALANCE_DUE" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Association Name="CUSTOMER_CUSTOMER_BALANCE" Member="CUSTOMER" ThisKey="CUS_ID" OtherKey="CUS_ID" Type="CUSTOMER" IsForeignKey="true" />
     </Type>
   </Table>

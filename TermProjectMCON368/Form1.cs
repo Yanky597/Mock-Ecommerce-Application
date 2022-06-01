@@ -273,7 +273,8 @@ namespace TermProjectMCON368
                             DialogResult res = MessageBox.Show("Your Order has been submitted", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             clearCartViews();
-                            usersBalanceLbl.Text = userSession.getCurrentUserBalance().ToString();
+                            usersBalanceLbl.Text = "$" + userSession.CustomerBalance.ToString();
+                            balanceDueAmountLbl.Text = "$" + userSession.getCurrentUsersBalanceDue().ToString();
                             checkoutErrorMessage.Visible = false;
                         }
                         else
@@ -285,6 +286,8 @@ namespace TermProjectMCON368
                     }
                     catch (Exception E)
                     {
+                        Console.WriteLine(E.Message);
+                        Console.WriteLine(E.StackTrace);
                         checkoutErrorMessage.Visible = true;
                     }
 
@@ -308,6 +311,11 @@ namespace TermProjectMCON368
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

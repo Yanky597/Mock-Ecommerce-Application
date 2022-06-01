@@ -8,13 +8,22 @@ namespace TermProjectMCON368
 {
     static class PurchaseOperations
     {
+
+        public static decimal BALANCE_DUE_LIMIT = 500;
         public static DataClasses1DataContext dbConnection;
 
-        public static decimal currentCustomersBalance(String customerID)
+        public static CUSTOMER_BALANCE getCurrentCustomer(String customerID)
         {
             return dbConnection.CUSTOMER_BALANCEs
                 .Where(customer => customer.CUS_ID == customerID)
-                .Select(customer => customer.CUS_BALANCE).First();
+                .First();
+        }
+
+        public static decimal? getCurrentCustomerBalanceDue(String customerID)
+        {
+            return dbConnection.CUSTOMER_BALANCEs
+                .Where(customer => customer.CUS_ID == customerID)
+                .First().BALANCE_DUE;
         }
 
         public static void addItemToCart(String productId, Dictionary<String, int> shoppingCart)
@@ -51,7 +60,14 @@ namespace TermProjectMCON368
 
         public static bool userCanMakePurchase(String userID, decimal ShoppingCartTotal)
         {
-            return currentCustomersBalance(userID) >= ShoppingCartTotal;
+           
+            if(getCurrentCustomer(userID).BALANCE_DUE == null) 
+            {
+                getCurrentCustomer(userID).BALANCE_DUE = 0;
+                dbConnection.SubmitChanges();
+            }
+
+            return (getCurrentCustomer(userID).BALANCE_DUE + ShoppingCartTotal) <= BALANCE_DUE_LIMIT;
         }
 
         public static bool submitOrder(String userID, Dictionary<String, int> shoppingCart)
@@ -62,29 +78,24 @@ namespace TermProjectMCON368
                 String invoiceID = generateAndGetUniqueId();
                 createInvoice(userID, invoiceID, shoppingCart);
                 createInvoiceRows(invoiceID, shoppingCart);
-                updateUserAccountBalance(userID, ProductOperations.getCartTotal(shoppingCart));
+                AddShoppingCartTotalToBalanceDue(userID, ProductOperations.getCartTotal(shoppingCart));
                 return true;
             }
 
             return false;
         }
 
-        public static void updateUserAccountBalance(String userID, decimal shoppingCartTotal)
+        public static void AddShoppingCartTotalToBalanceDue(String userID, decimal shoppingCartTotal)
         {
-
 
             CUSTOMER_BALANCE currentUser = dbConnection.CUSTOMER_BALANCEs
                  .Where(customer => customer.CUS_ID == userID)
                  .First();
 
-            currentUser.CUS_BALANCE = currentUser.CUS_BALANCE - shoppingCartTotal;
-            Console.WriteLine(currentUser.CUS_BALANCE);
+            currentUser.BALANCE_DUE = currentUser.BALANCE_DUE + shoppingCartTotal;
 
-            //updateCustomerBalance.CUS_BALANCE = updateCustomerBalance.CUS_BALANCE - shoppingCartTotal;
-
-            //dbConnection.CUSTOMER_BALANCEs.InsertOnSubmit(currentUser);
             dbConnection.SubmitChanges();
-            Console.WriteLine("This is after the submit " + currentUser.CUS_BALANCE);
+
         }
 
         public static void createInvoice(String customerID, String invoiceID, Dictionary<String, int> shoppingCart) 

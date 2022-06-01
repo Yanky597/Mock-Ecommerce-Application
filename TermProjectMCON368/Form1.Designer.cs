@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             ""}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.WelcomeGuestlbl = new System.Windows.Forms.Label();
@@ -116,6 +116,8 @@
             this.item7TitleLbl = new System.Windows.Forms.Label();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.balanceDueAmountLbl = new System.Windows.Forms.Label();
             this.loginBx.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.guestInfoPanel.SuspendLayout();
@@ -147,7 +149,7 @@
             this.WelcomeGuestlbl.AutoSize = true;
             this.WelcomeGuestlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WelcomeGuestlbl.ForeColor = System.Drawing.Color.White;
-            this.WelcomeGuestlbl.Location = new System.Drawing.Point(23, 71);
+            this.WelcomeGuestlbl.Location = new System.Drawing.Point(23, 72);
             this.WelcomeGuestlbl.Name = "WelcomeGuestlbl";
             this.WelcomeGuestlbl.Size = new System.Drawing.Size(93, 33);
             this.WelcomeGuestlbl.TabIndex = 2;
@@ -242,15 +244,17 @@
             // guestInfoPanel
             // 
             this.guestInfoPanel.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.guestInfoPanel.Controls.Add(this.balanceDueAmountLbl);
+            this.guestInfoPanel.Controls.Add(this.label1);
             this.guestInfoPanel.Controls.Add(this.viewCustomerHistory);
             this.guestInfoPanel.Controls.Add(this.welcomeTextLbl);
-            this.guestInfoPanel.Controls.Add(this.balanceTitleLbl);
             this.guestInfoPanel.Controls.Add(this.usersBalanceLbl);
             this.guestInfoPanel.Controls.Add(this.WelcomeGuestlbl);
             this.guestInfoPanel.Controls.Add(this.logOutBtn);
+            this.guestInfoPanel.Controls.Add(this.balanceTitleLbl);
             this.guestInfoPanel.Location = new System.Drawing.Point(13, 445);
             this.guestInfoPanel.Name = "guestInfoPanel";
-            this.guestInfoPanel.Size = new System.Drawing.Size(252, 458);
+            this.guestInfoPanel.Size = new System.Drawing.Size(252, 657);
             this.guestInfoPanel.TabIndex = 5;
             this.guestInfoPanel.Visible = false;
             // 
@@ -258,7 +262,7 @@
             // 
             this.viewCustomerHistory.BackColor = System.Drawing.Color.DarkCyan;
             this.viewCustomerHistory.ForeColor = System.Drawing.Color.White;
-            this.viewCustomerHistory.Location = new System.Drawing.Point(29, 364);
+            this.viewCustomerHistory.Location = new System.Drawing.Point(29, 522);
             this.viewCustomerHistory.Name = "viewCustomerHistory";
             this.viewCustomerHistory.Size = new System.Drawing.Size(194, 49);
             this.viewCustomerHistory.TabIndex = 7;
@@ -279,20 +283,21 @@
             // balanceTitleLbl
             // 
             this.balanceTitleLbl.AutoSize = true;
-            this.balanceTitleLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.balanceTitleLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.balanceTitleLbl.ForeColor = System.Drawing.Color.White;
-            this.balanceTitleLbl.Location = new System.Drawing.Point(37, 188);
+            this.balanceTitleLbl.Location = new System.Drawing.Point(57, 169);
             this.balanceTitleLbl.Name = "balanceTitleLbl";
-            this.balanceTitleLbl.Size = new System.Drawing.Size(179, 51);
+            this.balanceTitleLbl.Size = new System.Drawing.Size(132, 37);
             this.balanceTitleLbl.TabIndex = 5;
             this.balanceTitleLbl.Text = "Balance";
+            this.balanceTitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // usersBalanceLbl
             // 
             this.usersBalanceLbl.AutoSize = true;
             this.usersBalanceLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usersBalanceLbl.ForeColor = System.Drawing.Color.White;
-            this.usersBalanceLbl.Location = new System.Drawing.Point(63, 249);
+            this.usersBalanceLbl.Location = new System.Drawing.Point(55, 220);
             this.usersBalanceLbl.Name = "usersBalanceLbl";
             this.usersBalanceLbl.Size = new System.Drawing.Size(130, 51);
             this.usersBalanceLbl.TabIndex = 4;
@@ -304,7 +309,7 @@
             this.logOutBtn.FlatAppearance.BorderSize = 0;
             this.logOutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logOutBtn.ForeColor = System.Drawing.Color.Brown;
-            this.logOutBtn.Location = new System.Drawing.Point(61, 406);
+            this.logOutBtn.Location = new System.Drawing.Point(61, 564);
             this.logOutBtn.Name = "logOutBtn";
             this.logOutBtn.Size = new System.Drawing.Size(135, 49);
             this.logOutBtn.TabIndex = 3;
@@ -402,7 +407,7 @@
             this.listViewItemsInCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewItemsInCart.HideSelection = false;
             this.listViewItemsInCart.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
+            listViewItem1});
             this.listViewItemsInCart.LabelWrap = false;
             this.listViewItemsInCart.Location = new System.Drawing.Point(0, 187);
             this.listViewItemsInCart.Name = "listViewItemsInCart";
@@ -1146,6 +1151,32 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1271, 1149);
             this.tableLayoutPanel1.TabIndex = 10;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(25, 324);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(199, 37);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Balance Due";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // balanceDueAmountLbl
+            // 
+            this.balanceDueAmountLbl.AutoSize = true;
+            this.balanceDueAmountLbl.BackColor = System.Drawing.Color.Transparent;
+            this.balanceDueAmountLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F);
+            this.balanceDueAmountLbl.ForeColor = System.Drawing.Color.White;
+            this.balanceDueAmountLbl.Location = new System.Drawing.Point(59, 394);
+            this.balanceDueAmountLbl.Name = "balanceDueAmountLbl";
+            this.balanceDueAmountLbl.Size = new System.Drawing.Size(130, 51);
+            this.balanceDueAmountLbl.TabIndex = 9;
+            this.balanceDueAmountLbl.Text = "$0.00";
+            this.balanceDueAmountLbl.Click += new System.EventHandler(this.label3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -1290,6 +1321,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label balanceDueAmountLbl;
+        private System.Windows.Forms.Label label1;
     }
 }
 
