@@ -17,11 +17,11 @@ namespace TermProjectMCON368
                 .Select(customer => customer.CUS_BALANCE).First();
         }
 
-        public static decimal getUsersBalanceDue(String userID)
+        public static decimal? getUsersBalanceDue(String userID)
         {
-            return (decimal)dbConnection.CUSTOMER_BALANCEs
+            return dbConnection.CUSTOMER_BALANCEs
                 .Where(customer => customer.CUS_ID == userID)
-                .Select(customer => customer.BALANCE_DUE).First();
+                .Select(customer => customer.BALANCE_DUE)?.First() ?? 0.00m;
         }
 
         public static string getUsersFullName(String userID) 

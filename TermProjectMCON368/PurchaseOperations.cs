@@ -19,11 +19,33 @@ namespace TermProjectMCON368
                 .First();
         }
 
+        public static bool payBalanceDue(String customerID, decimal amountToBePaid)
+        {
+            CUSTOMER_BALANCE currentCustomer = getCurrentCustomer(customerID);
+
+            if(currentCustomer.BALANCE_DUE != null && amountToBePaid <= getCurrentCustomerBalance(customerID)) 
+            {
+                currentCustomer.CUS_BALANCE = currentCustomer.CUS_BALANCE - amountToBePaid;
+                currentCustomer.BALANCE_DUE = currentCustomer.BALANCE_DUE - amountToBePaid;
+                dbConnection.SubmitChanges();
+                return true;
+            }
+
+            return false;
+        }
+
         public static decimal? getCurrentCustomerBalanceDue(String customerID)
         {
             return dbConnection.CUSTOMER_BALANCEs
                 .Where(customer => customer.CUS_ID == customerID)
                 .First().BALANCE_DUE;
+        }
+
+        public static decimal? getCurrentCustomerBalance(String customerID)
+        {
+            return dbConnection.CUSTOMER_BALANCEs
+                .Where(customer => customer.CUS_ID == customerID)
+                .First().CUS_BALANCE;
         }
 
         public static void addItemToCart(String productId, Dictionary<String, int> shoppingCart)

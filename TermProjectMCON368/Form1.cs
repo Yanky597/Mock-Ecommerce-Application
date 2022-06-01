@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
+using Microsoft.VisualBasic;
 
 namespace TermProjectMCON368
 {
@@ -80,8 +81,9 @@ namespace TermProjectMCON368
                     guestInfoPanel.Visible = true;
                     WelcomeGuestlbl.Text = userSession.FullName;
                     usersBalanceLbl.Text = "$" + userSession.CustomerBalance.ToString();
+                    balanceDueAmountLbl.Text = "$" + userSession.getCurrentUsersBalanceDue() ?? "0.00";
                 }
-                else 
+                else
                 {
                     errorMessageLbl.Visible = true;
                 }
@@ -316,6 +318,38 @@ namespace TermProjectMCON368
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void payBalanceClick(object sender, EventArgs e)
+        {
+            try
+            {
+                String payBalanceMessage = "How much of your balance would you like to pay? your answer must be numeric and less or equal to the amount you have in your account";
+                decimal input = Convert.ToDecimal(Interaction.InputBox(payBalanceMessage, "Pay Balance", "$0.00", 20, 20));
+
+                using (var dataBaseConnection = new DataClasses1DataContext())
+                {
+                    userSession.resetDbConnection(dataBaseConnection);
+
+                    if (userSession.payBalanceDue(input)) 
+                    {
+                        usersBalanceLbl.Text = "$" + userSession.CustomerBalance.ToString();
+                        balanceDueAmountLbl.Text = "$" + userSession.getCurrentUsersBalanceDue().ToString();
+                    }
+
+                }
+
+            }
+            catch (Exception E)
+            {
+                MessageBox.Show("Input can only be numeric", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+           
+        }
+
+        private void panel14_Paint(object sender, PaintEventArgs e)
         {
 
         }

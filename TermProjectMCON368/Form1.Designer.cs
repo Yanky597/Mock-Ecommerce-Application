@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
             ""}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.WelcomeGuestlbl = new System.Windows.Forms.Label();
@@ -41,11 +41,14 @@
             this.passwordTextBx = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.guestInfoPanel = new System.Windows.Forms.Panel();
+            this.payBalanceButton = new System.Windows.Forms.Button();
+            this.balanceDueAmountLbl = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.viewCustomerHistory = new System.Windows.Forms.Button();
             this.welcomeTextLbl = new System.Windows.Forms.Label();
-            this.balanceTitleLbl = new System.Windows.Forms.Label();
             this.usersBalanceLbl = new System.Windows.Forms.Label();
             this.logOutBtn = new System.Windows.Forms.Button();
+            this.balanceTitleLbl = new System.Windows.Forms.Label();
             this.cartTextLbl = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.checkoutErrorMessage = new System.Windows.Forms.Label();
@@ -116,8 +119,6 @@
             this.item7TitleLbl = new System.Windows.Forms.Label();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.balanceDueAmountLbl = new System.Windows.Forms.Label();
             this.loginBx.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.guestInfoPanel.SuspendLayout();
@@ -244,6 +245,7 @@
             // guestInfoPanel
             // 
             this.guestInfoPanel.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.guestInfoPanel.Controls.Add(this.payBalanceButton);
             this.guestInfoPanel.Controls.Add(this.balanceDueAmountLbl);
             this.guestInfoPanel.Controls.Add(this.label1);
             this.guestInfoPanel.Controls.Add(this.viewCustomerHistory);
@@ -257,6 +259,44 @@
             this.guestInfoPanel.Size = new System.Drawing.Size(252, 657);
             this.guestInfoPanel.TabIndex = 5;
             this.guestInfoPanel.Visible = false;
+            // 
+            // payBalanceButton
+            // 
+            this.payBalanceButton.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.payBalanceButton.ForeColor = System.Drawing.Color.White;
+            this.payBalanceButton.Location = new System.Drawing.Point(29, 460);
+            this.payBalanceButton.Name = "payBalanceButton";
+            this.payBalanceButton.Size = new System.Drawing.Size(191, 50);
+            this.payBalanceButton.TabIndex = 10;
+            this.payBalanceButton.Text = "Pay Balance";
+            this.payBalanceButton.UseVisualStyleBackColor = false;
+            this.payBalanceButton.Click += new System.EventHandler(this.payBalanceClick);
+            // 
+            // balanceDueAmountLbl
+            // 
+            this.balanceDueAmountLbl.AutoSize = true;
+            this.balanceDueAmountLbl.BackColor = System.Drawing.Color.Transparent;
+            this.balanceDueAmountLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F);
+            this.balanceDueAmountLbl.ForeColor = System.Drawing.Color.White;
+            this.balanceDueAmountLbl.Location = new System.Drawing.Point(59, 394);
+            this.balanceDueAmountLbl.Name = "balanceDueAmountLbl";
+            this.balanceDueAmountLbl.Size = new System.Drawing.Size(130, 51);
+            this.balanceDueAmountLbl.TabIndex = 9;
+            this.balanceDueAmountLbl.Text = "$0.00";
+            this.balanceDueAmountLbl.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(25, 324);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(199, 37);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Balance Due";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // viewCustomerHistory
             // 
@@ -279,18 +319,6 @@
             this.welcomeTextLbl.Size = new System.Drawing.Size(101, 25);
             this.welcomeTextLbl.TabIndex = 6;
             this.welcomeTextLbl.Text = "Welcome";
-            // 
-            // balanceTitleLbl
-            // 
-            this.balanceTitleLbl.AutoSize = true;
-            this.balanceTitleLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.balanceTitleLbl.ForeColor = System.Drawing.Color.White;
-            this.balanceTitleLbl.Location = new System.Drawing.Point(57, 169);
-            this.balanceTitleLbl.Name = "balanceTitleLbl";
-            this.balanceTitleLbl.Size = new System.Drawing.Size(132, 37);
-            this.balanceTitleLbl.TabIndex = 5;
-            this.balanceTitleLbl.Text = "Balance";
-            this.balanceTitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // usersBalanceLbl
             // 
@@ -316,6 +344,18 @@
             this.logOutBtn.Text = "logout";
             this.logOutBtn.UseVisualStyleBackColor = true;
             this.logOutBtn.Click += new System.EventHandler(this.logOutBtn_Click);
+            // 
+            // balanceTitleLbl
+            // 
+            this.balanceTitleLbl.AutoSize = true;
+            this.balanceTitleLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.balanceTitleLbl.ForeColor = System.Drawing.Color.White;
+            this.balanceTitleLbl.Location = new System.Drawing.Point(57, 169);
+            this.balanceTitleLbl.Name = "balanceTitleLbl";
+            this.balanceTitleLbl.Size = new System.Drawing.Size(132, 37);
+            this.balanceTitleLbl.TabIndex = 5;
+            this.balanceTitleLbl.Text = "Balance";
+            this.balanceTitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cartTextLbl
             // 
@@ -407,7 +447,7 @@
             this.listViewItemsInCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewItemsInCart.HideSelection = false;
             this.listViewItemsInCart.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem6});
             this.listViewItemsInCart.LabelWrap = false;
             this.listViewItemsInCart.Location = new System.Drawing.Point(0, 187);
             this.listViewItemsInCart.Name = "listViewItemsInCart";
@@ -432,7 +472,7 @@
             this.headerLbl.ForeColor = System.Drawing.Color.White;
             this.headerLbl.Location = new System.Drawing.Point(0, 0);
             this.headerLbl.Name = "headerLbl";
-            this.headerLbl.Size = new System.Drawing.Size(2129, 70);
+            this.headerLbl.Size = new System.Drawing.Size(2129, 90);
             this.headerLbl.TabIndex = 8;
             this.headerLbl.Text = "Essentials.Com";
             this.headerLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -446,8 +486,9 @@
             this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel14.Location = new System.Drawing.Point(0, 0);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(2129, 70);
+            this.panel14.Size = new System.Drawing.Size(2129, 90);
             this.panel14.TabIndex = 9;
+            this.panel14.Paint += new System.Windows.Forms.PaintEventHandler(this.panel14_Paint);
             // 
             // label14
             // 
@@ -457,7 +498,7 @@
             this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(0, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(2129, 70);
+            this.label14.Size = new System.Drawing.Size(2129, 90);
             this.label14.TabIndex = 10;
             this.label14.Text = "Essentials.Com";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -470,7 +511,7 @@
             this.label13.ForeColor = System.Drawing.Color.White;
             this.label13.Location = new System.Drawing.Point(0, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(2129, 70);
+            this.label13.Size = new System.Drawing.Size(2129, 90);
             this.label13.TabIndex = 9;
             this.label13.Text = "Essentials.Com";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1151,32 +1192,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1271, 1149);
             this.tableLayoutPanel1.TabIndex = 10;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(25, 324);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 37);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Balance Due";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // balanceDueAmountLbl
-            // 
-            this.balanceDueAmountLbl.AutoSize = true;
-            this.balanceDueAmountLbl.BackColor = System.Drawing.Color.Transparent;
-            this.balanceDueAmountLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F);
-            this.balanceDueAmountLbl.ForeColor = System.Drawing.Color.White;
-            this.balanceDueAmountLbl.Location = new System.Drawing.Point(59, 394);
-            this.balanceDueAmountLbl.Name = "balanceDueAmountLbl";
-            this.balanceDueAmountLbl.Size = new System.Drawing.Size(130, 51);
-            this.balanceDueAmountLbl.TabIndex = 9;
-            this.balanceDueAmountLbl.Text = "$0.00";
-            this.balanceDueAmountLbl.Click += new System.EventHandler(this.label3_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -1195,7 +1210,6 @@
             this.MinimumSize = new System.Drawing.Size(2000, 1718);
             this.Name = "Form1";
             this.Text = "Essentials.com";
-            this.TopMost = true;
             this.loginBx.ResumeLayout(false);
             this.loginBx.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -1323,6 +1337,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label balanceDueAmountLbl;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button payBalanceButton;
     }
 }
 

@@ -67,6 +67,11 @@ namespace TermProjectMCON368
             PurchaseOperations.dbConnection = dbConnection;
         }
 
+        public bool payBalanceDue(decimal amountToBePaid) 
+        {
+            return PurchaseOperations.payBalanceDue(ID, amountToBePaid);
+        }
+
         public bool isValidUser(String username, String password)
         {
 
@@ -134,7 +139,7 @@ namespace TermProjectMCON368
             return CustomerOperations.getUsersBalance(ID);
         }
 
-        public decimal getCurrentUsersBalanceDue() 
+        public decimal? getCurrentUsersBalanceDue() 
         {
             return CustomerOperations.getUsersBalanceDue(ID);
         }
