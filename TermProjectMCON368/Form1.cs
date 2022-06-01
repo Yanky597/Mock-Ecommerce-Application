@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Collections;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace TermProjectMCON368
 {
@@ -20,33 +23,46 @@ namespace TermProjectMCON368
             //Server Explorer
 
 
-            //using (dataBaseConnection = new DataClasses1DataContext())
-            //{
-            //    // session that is used to manage user operations
-            //    //CurrentSession userSession = new CurrentSession(dataBaseConnection);
-            //    CustomerOperations.dbConnection = dataBaseConnection;
-            //    ProductOperations.dbConnection = dataBaseConnection;
-            //    PurchaseOperations.dbConnection = dataBaseConnection;
-            //    userSession = new CurrentSession(dataBaseConnection);
+            using (var dataBaseConnection = new DataClasses1DataContext())
+            {
+                setupItemsToPurchase(dataBaseConnection);
 
-
-
-
-            //    var customer = dataBaseConnection.CUSTOMERs;
-            //    // and so on
-            //    //var newCustomer = new CUSTOMER()
-            //    //{
-            //    //    CUS_ID = "",
-
-            //    //};
-            //    //db.CUSTOMERs.InsertOnSubmit(newCustomer);
-            //    //db.SubmitChanges();
-            //    //customer.ToList().ForEach(p => Console.WriteLine(p.CUS_LNAME));
-
-            //}
-
+            }
         }
 
+        private void setupItemsToPurchase(DataClasses1DataContext dataBaseConnection)
+        {
+            ProductOperations.dbConnection = dataBaseConnection;
+            var productNames = ProductOperations.getListOfProductNames();
+            var productPrices = ProductOperations.getListOfProductPrices();
+            List<Label> listOfItemNameLabels = new List<Label>();
+            List<Label> listOfItemPricesLabels = new List<Label>();
+
+            listOfItemNameLabels.Add(item1TitleLbl);
+            listOfItemNameLabels.Add(item2TitleLbl);
+            listOfItemNameLabels.Add(item3TitleLbl);
+            listOfItemNameLabels.Add(item4TitleLbl);
+            listOfItemNameLabels.Add(item5TitleLbl);
+            listOfItemNameLabels.Add(item6TitleLbl);
+            listOfItemNameLabels.Add(item7TitleLbl);
+            listOfItemNameLabels.Add(item8TitleLbl);
+
+            listOfItemPricesLabels.Add(priceItem1Lbl);
+            listOfItemPricesLabels.Add(priceItem2Lbl);
+            listOfItemPricesLabels.Add(priceItem3Lbl);
+            listOfItemPricesLabels.Add(priceItem4Lbl);
+            listOfItemPricesLabels.Add(priceItem5Lbl);
+            listOfItemPricesLabels.Add(priceItem6Lbl);
+            listOfItemPricesLabels.Add(priceItem7Lbl);
+            listOfItemPricesLabels.Add(priceItem8Lbl);
+
+            for (int i = 0; i < listOfItemNameLabels.Count(); i++)
+            {
+                listOfItemNameLabels[i].Text = productNames[i];
+                listOfItemPricesLabels[i].Text = $"${Math.Round(productPrices[i], 2).ToString()}";
+
+            }
+        }
 
         private void loginBTN_Click(object sender, EventArgs e)
         {
@@ -97,7 +113,10 @@ namespace TermProjectMCON368
             else
             {
                 listViewItemsInCart.Items.Clear();
-                listViewItemsInCart.Items.Add("Cart is empty");
+                listViewItemsInCart.Items.Add("Login To");
+                listViewItemsInCart.Items.Add("Add Items");
+                listViewItemsInCart.Items.Add("To Cart");
+
             }
         }
 

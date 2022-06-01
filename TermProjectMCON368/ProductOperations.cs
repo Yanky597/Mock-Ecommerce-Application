@@ -12,7 +12,12 @@ namespace TermProjectMCON368
 
         public static List<String> getListOfProductNames()
         {
-            return dbConnection.PRODUCTs.Select(product => product.PRO_NAME).ToList();
+            return dbConnection.PRODUCTs.Select(product => product.PRO_NAME.ToUpper()).ToList();
+        }
+
+        public static List<Decimal> getListOfProductPrices()
+        {
+            return dbConnection.PRODUCTs.Select(product => product.PRO_SALE_P).ToList();
         }
 
         public static decimal getProductPrice(String productID) 

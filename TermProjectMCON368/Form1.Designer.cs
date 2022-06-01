@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             ""}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.WelcomeGuestlbl = new System.Windows.Forms.Label();
@@ -57,62 +57,64 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.headerLbl = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.addTissueToCartBtn = new System.Windows.Forms.Button();
             this.deleteTissueFromCartBtn = new System.Windows.Forms.Button();
+            this.addTissueToCartBtn = new System.Windows.Forms.Button();
+            this.priceItem2Lbl = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.item2TitleLbl = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.addWipesToCartBtn = new System.Windows.Forms.Button();
             this.DeleteWipesFromCartBtn = new System.Windows.Forms.Button();
+            this.addWipesToCartBtn = new System.Windows.Forms.Button();
+            this.priceItem3Lbl = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.item3TitleLbl = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.addNapkinsToCartBtn = new System.Windows.Forms.Button();
             this.deleteNapkinsFromCartBtn = new System.Windows.Forms.Button();
+            this.addNapkinsToCartBtn = new System.Windows.Forms.Button();
+            this.priceItem4Lbl = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.item4TitleLbl = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.addPaperTowelsToCartBtn = new System.Windows.Forms.Button();
             this.deletePaperTowelsFromCart = new System.Windows.Forms.Button();
+            this.addPaperTowelsToCartBtn = new System.Windows.Forms.Button();
+            this.priceItem5Lbl = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.item5TitleLbl = new System.Windows.Forms.Label();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.addDiapersToCartBtn = new System.Windows.Forms.Button();
             this.deleteDiapersFromCartBtn = new System.Windows.Forms.Button();
+            this.addDiapersToCartBtn = new System.Windows.Forms.Button();
+            this.priceItem6Lbl = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.item6TitleLbl = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.addWindexToCartBtn = new System.Windows.Forms.Button();
             this.deleteWindexFromCart = new System.Windows.Forms.Button();
+            this.addWindexToCartBtn = new System.Windows.Forms.Button();
+            this.priceItem8Lbl = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.item8TitleLbl = new System.Windows.Forms.Label();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.AddMurphysOilToCartBtn = new System.Windows.Forms.Button();
             this.murphysOilMinusBtn = new System.Windows.Forms.Button();
+            this.AddMurphysOilToCartBtn = new System.Windows.Forms.Button();
+            this.priceItem1Lbl = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.item1TitleLbl = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.addToiletPaperBtn = new System.Windows.Forms.Button();
             this.DeleteToiletPapersFromCart = new System.Windows.Forms.Button();
+            this.addToiletPaperBtn = new System.Windows.Forms.Button();
+            this.priceItem7Lbl = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.item7TitleLbl = new System.Windows.Forms.Label();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.loginBx.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -145,7 +147,7 @@
             this.WelcomeGuestlbl.AutoSize = true;
             this.WelcomeGuestlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WelcomeGuestlbl.ForeColor = System.Drawing.Color.White;
-            this.WelcomeGuestlbl.Location = new System.Drawing.Point(23, 117);
+            this.WelcomeGuestlbl.Location = new System.Drawing.Point(23, 71);
             this.WelcomeGuestlbl.Name = "WelcomeGuestlbl";
             this.WelcomeGuestlbl.Size = new System.Drawing.Size(93, 33);
             this.WelcomeGuestlbl.TabIndex = 2;
@@ -231,10 +233,10 @@
             // 
             this.flowLayoutPanel1.Controls.Add(this.loginBx);
             this.flowLayoutPanel1.Controls.Add(this.guestInfoPanel);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(13, 150);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(141, 101);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(10);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(348, 1825);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(299, 1149);
             this.flowLayoutPanel1.TabIndex = 5;
             // 
             // guestInfoPanel
@@ -268,7 +270,7 @@
             this.welcomeTextLbl.AutoSize = true;
             this.welcomeTextLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcomeTextLbl.ForeColor = System.Drawing.Color.White;
-            this.welcomeTextLbl.Location = new System.Drawing.Point(79, 66);
+            this.welcomeTextLbl.Location = new System.Drawing.Point(74, 28);
             this.welcomeTextLbl.Name = "welcomeTextLbl";
             this.welcomeTextLbl.Size = new System.Drawing.Size(101, 25);
             this.welcomeTextLbl.TabIndex = 6;
@@ -298,6 +300,7 @@
             // 
             // logOutBtn
             // 
+            this.logOutBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.logOutBtn.FlatAppearance.BorderSize = 0;
             this.logOutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logOutBtn.ForeColor = System.Drawing.Color.Brown;
@@ -330,9 +333,9 @@
             this.panel1.Controls.Add(this.cartTotalLbl);
             this.panel1.Controls.Add(this.listViewItemsInCart);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(1410, 152);
+            this.panel1.Location = new System.Drawing.Point(1779, 101);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(280, 1150);
+            this.panel1.Size = new System.Drawing.Size(350, 1149);
             this.panel1.TabIndex = 1;
             // 
             // checkoutErrorMessage
@@ -399,7 +402,7 @@
             this.listViewItemsInCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewItemsInCart.HideSelection = false;
             this.listViewItemsInCart.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem2});
             this.listViewItemsInCart.LabelWrap = false;
             this.listViewItemsInCart.Location = new System.Drawing.Point(0, 187);
             this.listViewItemsInCart.Name = "listViewItemsInCart";
@@ -418,16 +421,13 @@
             // 
             // headerLbl
             // 
-            this.headerLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.headerLbl.AutoSize = true;
             this.headerLbl.BackColor = System.Drawing.Color.Transparent;
+            this.headerLbl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.headerLbl.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.headerLbl.ForeColor = System.Drawing.Color.White;
-            this.headerLbl.Location = new System.Drawing.Point(104, 5);
+            this.headerLbl.Location = new System.Drawing.Point(0, 0);
             this.headerLbl.Name = "headerLbl";
-            this.headerLbl.Size = new System.Drawing.Size(338, 55);
+            this.headerLbl.Size = new System.Drawing.Size(2129, 70);
             this.headerLbl.TabIndex = 8;
             this.headerLbl.Text = "Essentials.Com";
             this.headerLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -435,11 +435,40 @@
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.panel14.Controls.Add(this.label14);
+            this.panel14.Controls.Add(this.label13);
             this.panel14.Controls.Add(this.headerLbl);
-            this.panel14.Location = new System.Drawing.Point(7, 7);
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel14.Location = new System.Drawing.Point(0, 0);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(1680, 136);
+            this.panel14.Size = new System.Drawing.Size(2129, 70);
             this.panel14.TabIndex = 9;
+            // 
+            // label14
+            // 
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(0, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(2129, 70);
+            this.label14.TabIndex = 10;
+            this.label14.Text = "Essentials.Com";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label13
+            // 
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(0, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(2129, 70);
+            this.label13.TabIndex = 9;
+            this.label13.Text = "Essentials.Com";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel4
             // 
@@ -447,15 +476,71 @@
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.deleteTissueFromCartBtn);
             this.panel4.Controls.Add(this.addTissueToCartBtn);
-            this.panel4.Controls.Add(this.label4);
+            this.panel4.Controls.Add(this.priceItem2Lbl);
             this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.label6);
+            this.panel4.Controls.Add(this.item2TitleLbl);
             this.panel4.Controls.Add(this.pictureBox3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(511, 3);
+            this.panel4.Location = new System.Drawing.Point(638, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(503, 278);
+            this.panel4.Size = new System.Drawing.Size(630, 281);
             this.panel4.TabIndex = 5;
+            // 
+            // deleteTissueFromCartBtn
+            // 
+            this.deleteTissueFromCartBtn.BackColor = System.Drawing.Color.DarkRed;
+            this.deleteTissueFromCartBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteTissueFromCartBtn.ForeColor = System.Drawing.Color.White;
+            this.deleteTissueFromCartBtn.Location = new System.Drawing.Point(394, 137);
+            this.deleteTissueFromCartBtn.Name = "deleteTissueFromCartBtn";
+            this.deleteTissueFromCartBtn.Size = new System.Drawing.Size(48, 42);
+            this.deleteTissueFromCartBtn.TabIndex = 7;
+            this.deleteTissueFromCartBtn.Text = "-";
+            this.deleteTissueFromCartBtn.UseVisualStyleBackColor = false;
+            this.deleteTissueFromCartBtn.Click += new System.EventHandler(this.deleteTissueFromCartBtn_Click);
+            // 
+            // addTissueToCartBtn
+            // 
+            this.addTissueToCartBtn.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.addTissueToCartBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addTissueToCartBtn.ForeColor = System.Drawing.Color.White;
+            this.addTissueToCartBtn.Location = new System.Drawing.Point(336, 137);
+            this.addTissueToCartBtn.Name = "addTissueToCartBtn";
+            this.addTissueToCartBtn.Size = new System.Drawing.Size(47, 42);
+            this.addTissueToCartBtn.TabIndex = 6;
+            this.addTissueToCartBtn.Text = "+";
+            this.addTissueToCartBtn.UseVisualStyleBackColor = false;
+            this.addTissueToCartBtn.Click += new System.EventHandler(this.addTissueToCartBtn_Click);
+            // 
+            // priceItem2Lbl
+            // 
+            this.priceItem2Lbl.AutoSize = true;
+            this.priceItem2Lbl.Location = new System.Drawing.Point(389, 98);
+            this.priceItem2Lbl.Name = "priceItem2Lbl";
+            this.priceItem2Lbl.Size = new System.Drawing.Size(78, 25);
+            this.priceItem2Lbl.TabIndex = 3;
+            this.priceItem2Lbl.Text = "$14.00";
+            this.priceItem2Lbl.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(316, 98);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 25);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Price:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // item2TitleLbl
+            // 
+            this.item2TitleLbl.AutoSize = true;
+            this.item2TitleLbl.Location = new System.Drawing.Point(345, 64);
+            this.item2TitleLbl.Name = "item2TitleLbl";
+            this.item2TitleLbl.Size = new System.Drawing.Size(87, 25);
+            this.item2TitleLbl.TabIndex = 1;
+            this.item2TitleLbl.Text = "Tissues";
+            this.item2TitleLbl.Click += new System.EventHandler(this.label6_Click);
             // 
             // pictureBox3
             // 
@@ -471,129 +556,20 @@
             this.pictureBox3.WaitOnLoad = true;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(345, 64);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 25);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Tissues";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(316, 98);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 25);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Price:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(389, 98);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 25);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "$14.00";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // addTissueToCartBtn
-            // 
-            this.addTissueToCartBtn.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.addTissueToCartBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addTissueToCartBtn.ForeColor = System.Drawing.Color.White;
-            this.addTissueToCartBtn.Location = new System.Drawing.Point(336, 137);
-            this.addTissueToCartBtn.Name = "addTissueToCartBtn";
-            this.addTissueToCartBtn.Size = new System.Drawing.Size(47, 42);
-            this.addTissueToCartBtn.TabIndex = 6;
-            this.addTissueToCartBtn.Text = "+";
-            this.addTissueToCartBtn.UseVisualStyleBackColor = false;
-            this.addTissueToCartBtn.Click += new System.EventHandler(this.addTissueToCartBtn_Click);
-            // 
-            // deleteTissueFromCartBtn
-            // 
-            this.deleteTissueFromCartBtn.BackColor = System.Drawing.Color.DarkRed;
-            this.deleteTissueFromCartBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteTissueFromCartBtn.ForeColor = System.Drawing.Color.White;
-            this.deleteTissueFromCartBtn.Location = new System.Drawing.Point(394, 137);
-            this.deleteTissueFromCartBtn.Name = "deleteTissueFromCartBtn";
-            this.deleteTissueFromCartBtn.Size = new System.Drawing.Size(48, 42);
-            this.deleteTissueFromCartBtn.TabIndex = 7;
-            this.deleteTissueFromCartBtn.Text = "-";
-            this.deleteTissueFromCartBtn.UseVisualStyleBackColor = false;
-            this.deleteTissueFromCartBtn.Click += new System.EventHandler(this.deleteTissueFromCartBtn_Click);
-            // 
             // panel7
             // 
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.DeleteWipesFromCartBtn);
             this.panel7.Controls.Add(this.addWipesToCartBtn);
-            this.panel7.Controls.Add(this.label10);
+            this.panel7.Controls.Add(this.priceItem3Lbl);
             this.panel7.Controls.Add(this.label11);
-            this.panel7.Controls.Add(this.label12);
+            this.panel7.Controls.Add(this.item3TitleLbl);
             this.panel7.Controls.Add(this.pictureBox5);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(3, 287);
+            this.panel7.Location = new System.Drawing.Point(3, 290);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(502, 278);
+            this.panel7.Size = new System.Drawing.Size(629, 281);
             this.panel7.TabIndex = 5;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.InitialImage")));
-            this.pictureBox5.Location = new System.Drawing.Point(23, 21);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(257, 219);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 0;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.WaitOnLoad = true;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(343, 77);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(72, 25);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "Wipes";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(306, 112);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(67, 25);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "Price:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(379, 112);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(78, 25);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "$20.00";
-            // 
-            // addWipesToCartBtn
-            // 
-            this.addWipesToCartBtn.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.addWipesToCartBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addWipesToCartBtn.ForeColor = System.Drawing.Color.White;
-            this.addWipesToCartBtn.Location = new System.Drawing.Point(329, 151);
-            this.addWipesToCartBtn.Name = "addWipesToCartBtn";
-            this.addWipesToCartBtn.Size = new System.Drawing.Size(44, 40);
-            this.addWipesToCartBtn.TabIndex = 6;
-            this.addWipesToCartBtn.Text = "+";
-            this.addWipesToCartBtn.UseVisualStyleBackColor = false;
-            this.addWipesToCartBtn.Click += new System.EventHandler(this.addWipesToCartBtn_Click);
             // 
             // DeleteWipesFromCartBtn
             // 
@@ -608,73 +584,73 @@
             this.DeleteWipesFromCartBtn.UseVisualStyleBackColor = false;
             this.DeleteWipesFromCartBtn.Click += new System.EventHandler(this.DeleteWipesFromCartBtn_Click);
             // 
+            // addWipesToCartBtn
+            // 
+            this.addWipesToCartBtn.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.addWipesToCartBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addWipesToCartBtn.ForeColor = System.Drawing.Color.White;
+            this.addWipesToCartBtn.Location = new System.Drawing.Point(329, 151);
+            this.addWipesToCartBtn.Name = "addWipesToCartBtn";
+            this.addWipesToCartBtn.Size = new System.Drawing.Size(44, 40);
+            this.addWipesToCartBtn.TabIndex = 6;
+            this.addWipesToCartBtn.Text = "+";
+            this.addWipesToCartBtn.UseVisualStyleBackColor = false;
+            this.addWipesToCartBtn.Click += new System.EventHandler(this.addWipesToCartBtn_Click);
+            // 
+            // priceItem3Lbl
+            // 
+            this.priceItem3Lbl.AutoSize = true;
+            this.priceItem3Lbl.Location = new System.Drawing.Point(379, 112);
+            this.priceItem3Lbl.Name = "priceItem3Lbl";
+            this.priceItem3Lbl.Size = new System.Drawing.Size(78, 25);
+            this.priceItem3Lbl.TabIndex = 3;
+            this.priceItem3Lbl.Text = "$20.00";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(306, 112);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(67, 25);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Price:";
+            // 
+            // item3TitleLbl
+            // 
+            this.item3TitleLbl.AutoSize = true;
+            this.item3TitleLbl.Location = new System.Drawing.Point(343, 77);
+            this.item3TitleLbl.Name = "item3TitleLbl";
+            this.item3TitleLbl.Size = new System.Drawing.Size(72, 25);
+            this.item3TitleLbl.TabIndex = 1;
+            this.item3TitleLbl.Text = "Wipes";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.InitialImage")));
+            this.pictureBox5.Location = new System.Drawing.Point(23, 21);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(257, 219);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 0;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.WaitOnLoad = true;
+            // 
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.deleteNapkinsFromCartBtn);
             this.panel5.Controls.Add(this.addNapkinsToCartBtn);
-            this.panel5.Controls.Add(this.label7);
+            this.panel5.Controls.Add(this.priceItem4Lbl);
             this.panel5.Controls.Add(this.label8);
-            this.panel5.Controls.Add(this.label9);
+            this.panel5.Controls.Add(this.item4TitleLbl);
             this.panel5.Controls.Add(this.pictureBox4);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(511, 287);
+            this.panel5.Location = new System.Drawing.Point(638, 290);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(503, 278);
+            this.panel5.Size = new System.Drawing.Size(630, 281);
             this.panel5.TabIndex = 7;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.InitialImage")));
-            this.pictureBox4.Location = new System.Drawing.Point(35, 21);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(257, 219);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.WaitOnLoad = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(346, 83);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(90, 25);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Napkins";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(316, 118);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 25);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Price:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(389, 118);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 25);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "$12.00";
-            // 
-            // addNapkinsToCartBtn
-            // 
-            this.addNapkinsToCartBtn.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.addNapkinsToCartBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addNapkinsToCartBtn.ForeColor = System.Drawing.Color.White;
-            this.addNapkinsToCartBtn.Location = new System.Drawing.Point(339, 157);
-            this.addNapkinsToCartBtn.Name = "addNapkinsToCartBtn";
-            this.addNapkinsToCartBtn.Size = new System.Drawing.Size(44, 40);
-            this.addNapkinsToCartBtn.TabIndex = 6;
-            this.addNapkinsToCartBtn.Text = "+";
-            this.addNapkinsToCartBtn.UseVisualStyleBackColor = false;
-            this.addNapkinsToCartBtn.Click += new System.EventHandler(this.addNapkinsToCartBtn_Click);
             // 
             // deleteNapkinsFromCartBtn
             // 
@@ -689,73 +665,73 @@
             this.deleteNapkinsFromCartBtn.UseVisualStyleBackColor = false;
             this.deleteNapkinsFromCartBtn.Click += new System.EventHandler(this.deleteNapkinsFromCartBtn_Click);
             // 
+            // addNapkinsToCartBtn
+            // 
+            this.addNapkinsToCartBtn.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.addNapkinsToCartBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addNapkinsToCartBtn.ForeColor = System.Drawing.Color.White;
+            this.addNapkinsToCartBtn.Location = new System.Drawing.Point(339, 157);
+            this.addNapkinsToCartBtn.Name = "addNapkinsToCartBtn";
+            this.addNapkinsToCartBtn.Size = new System.Drawing.Size(44, 40);
+            this.addNapkinsToCartBtn.TabIndex = 6;
+            this.addNapkinsToCartBtn.Text = "+";
+            this.addNapkinsToCartBtn.UseVisualStyleBackColor = false;
+            this.addNapkinsToCartBtn.Click += new System.EventHandler(this.addNapkinsToCartBtn_Click);
+            // 
+            // priceItem4Lbl
+            // 
+            this.priceItem4Lbl.AutoSize = true;
+            this.priceItem4Lbl.Location = new System.Drawing.Point(389, 118);
+            this.priceItem4Lbl.Name = "priceItem4Lbl";
+            this.priceItem4Lbl.Size = new System.Drawing.Size(78, 25);
+            this.priceItem4Lbl.TabIndex = 3;
+            this.priceItem4Lbl.Text = "$12.00";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(316, 118);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 25);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Price:";
+            // 
+            // item4TitleLbl
+            // 
+            this.item4TitleLbl.AutoSize = true;
+            this.item4TitleLbl.Location = new System.Drawing.Point(346, 83);
+            this.item4TitleLbl.Name = "item4TitleLbl";
+            this.item4TitleLbl.Size = new System.Drawing.Size(90, 25);
+            this.item4TitleLbl.TabIndex = 1;
+            this.item4TitleLbl.Text = "Napkins";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.InitialImage")));
+            this.pictureBox4.Location = new System.Drawing.Point(35, 21);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(257, 219);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.WaitOnLoad = true;
+            // 
             // panel10
             // 
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel10.Controls.Add(this.deletePaperTowelsFromCart);
             this.panel10.Controls.Add(this.addPaperTowelsToCartBtn);
-            this.panel10.Controls.Add(this.label19);
+            this.panel10.Controls.Add(this.priceItem5Lbl);
             this.panel10.Controls.Add(this.label20);
-            this.panel10.Controls.Add(this.label21);
+            this.panel10.Controls.Add(this.item5TitleLbl);
             this.panel10.Controls.Add(this.pictureBox8);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(3, 571);
+            this.panel10.Location = new System.Drawing.Point(3, 577);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(502, 278);
+            this.panel10.Size = new System.Drawing.Size(629, 281);
             this.panel10.TabIndex = 5;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox8.InitialImage")));
-            this.pictureBox8.Location = new System.Drawing.Point(27, 22);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(253, 231);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 0;
-            this.pictureBox8.TabStop = false;
-            this.pictureBox8.WaitOnLoad = true;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(311, 85);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(143, 25);
-            this.label21.TabIndex = 1;
-            this.label21.Text = "Paper Towels";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(311, 120);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(67, 25);
-            this.label20.TabIndex = 2;
-            this.label20.Text = "Price:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(384, 120);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(78, 25);
-            this.label19.TabIndex = 3;
-            this.label19.Text = "$20.00";
-            // 
-            // addPaperTowelsToCartBtn
-            // 
-            this.addPaperTowelsToCartBtn.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.addPaperTowelsToCartBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addPaperTowelsToCartBtn.ForeColor = System.Drawing.Color.White;
-            this.addPaperTowelsToCartBtn.Location = new System.Drawing.Point(334, 168);
-            this.addPaperTowelsToCartBtn.Name = "addPaperTowelsToCartBtn";
-            this.addPaperTowelsToCartBtn.Size = new System.Drawing.Size(44, 40);
-            this.addPaperTowelsToCartBtn.TabIndex = 6;
-            this.addPaperTowelsToCartBtn.Text = "+";
-            this.addPaperTowelsToCartBtn.UseVisualStyleBackColor = false;
-            this.addPaperTowelsToCartBtn.Click += new System.EventHandler(this.addPaperTowelsToCartBtn_Click);
             // 
             // deletePaperTowelsFromCart
             // 
@@ -770,73 +746,73 @@
             this.deletePaperTowelsFromCart.UseVisualStyleBackColor = false;
             this.deletePaperTowelsFromCart.Click += new System.EventHandler(this.deletePaperTowelsFromCart_Click);
             // 
+            // addPaperTowelsToCartBtn
+            // 
+            this.addPaperTowelsToCartBtn.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.addPaperTowelsToCartBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addPaperTowelsToCartBtn.ForeColor = System.Drawing.Color.White;
+            this.addPaperTowelsToCartBtn.Location = new System.Drawing.Point(334, 168);
+            this.addPaperTowelsToCartBtn.Name = "addPaperTowelsToCartBtn";
+            this.addPaperTowelsToCartBtn.Size = new System.Drawing.Size(44, 40);
+            this.addPaperTowelsToCartBtn.TabIndex = 6;
+            this.addPaperTowelsToCartBtn.Text = "+";
+            this.addPaperTowelsToCartBtn.UseVisualStyleBackColor = false;
+            this.addPaperTowelsToCartBtn.Click += new System.EventHandler(this.addPaperTowelsToCartBtn_Click);
+            // 
+            // priceItem5Lbl
+            // 
+            this.priceItem5Lbl.AutoSize = true;
+            this.priceItem5Lbl.Location = new System.Drawing.Point(384, 120);
+            this.priceItem5Lbl.Name = "priceItem5Lbl";
+            this.priceItem5Lbl.Size = new System.Drawing.Size(78, 25);
+            this.priceItem5Lbl.TabIndex = 3;
+            this.priceItem5Lbl.Text = "$20.00";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(311, 120);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(67, 25);
+            this.label20.TabIndex = 2;
+            this.label20.Text = "Price:";
+            // 
+            // item5TitleLbl
+            // 
+            this.item5TitleLbl.AutoSize = true;
+            this.item5TitleLbl.Location = new System.Drawing.Point(311, 85);
+            this.item5TitleLbl.Name = "item5TitleLbl";
+            this.item5TitleLbl.Size = new System.Drawing.Size(143, 25);
+            this.item5TitleLbl.TabIndex = 1;
+            this.item5TitleLbl.Text = "Paper Towels";
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox8.InitialImage")));
+            this.pictureBox8.Location = new System.Drawing.Point(27, 22);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(253, 231);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 0;
+            this.pictureBox8.TabStop = false;
+            this.pictureBox8.WaitOnLoad = true;
+            // 
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel8.Controls.Add(this.deleteDiapersFromCartBtn);
             this.panel8.Controls.Add(this.addDiapersToCartBtn);
-            this.panel8.Controls.Add(this.label16);
+            this.panel8.Controls.Add(this.priceItem6Lbl);
             this.panel8.Controls.Add(this.label17);
-            this.panel8.Controls.Add(this.label18);
+            this.panel8.Controls.Add(this.item6TitleLbl);
             this.panel8.Controls.Add(this.pictureBox7);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(511, 571);
+            this.panel8.Location = new System.Drawing.Point(638, 577);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(503, 278);
+            this.panel8.Size = new System.Drawing.Size(630, 281);
             this.panel8.TabIndex = 9;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox7.InitialImage")));
-            this.pictureBox7.Location = new System.Drawing.Point(45, 14);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(228, 239);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 0;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.WaitOnLoad = true;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(346, 85);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(86, 25);
-            this.label18.TabIndex = 1;
-            this.label18.Text = "Diapers";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(316, 120);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(67, 25);
-            this.label17.TabIndex = 2;
-            this.label17.Text = "Price:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(389, 120);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(78, 25);
-            this.label16.TabIndex = 3;
-            this.label16.Text = "$24.00";
-            // 
-            // addDiapersToCartBtn
-            // 
-            this.addDiapersToCartBtn.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.addDiapersToCartBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addDiapersToCartBtn.ForeColor = System.Drawing.Color.White;
-            this.addDiapersToCartBtn.Location = new System.Drawing.Point(339, 168);
-            this.addDiapersToCartBtn.Name = "addDiapersToCartBtn";
-            this.addDiapersToCartBtn.Size = new System.Drawing.Size(44, 40);
-            this.addDiapersToCartBtn.TabIndex = 8;
-            this.addDiapersToCartBtn.Text = "+";
-            this.addDiapersToCartBtn.UseVisualStyleBackColor = false;
-            this.addDiapersToCartBtn.Click += new System.EventHandler(this.addDiapersToCartBtn_Click);
             // 
             // deleteDiapersFromCartBtn
             // 
@@ -851,73 +827,73 @@
             this.deleteDiapersFromCartBtn.UseVisualStyleBackColor = false;
             this.deleteDiapersFromCartBtn.Click += new System.EventHandler(this.deleteDiapersFromCartBtn_Click);
             // 
+            // addDiapersToCartBtn
+            // 
+            this.addDiapersToCartBtn.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.addDiapersToCartBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addDiapersToCartBtn.ForeColor = System.Drawing.Color.White;
+            this.addDiapersToCartBtn.Location = new System.Drawing.Point(339, 168);
+            this.addDiapersToCartBtn.Name = "addDiapersToCartBtn";
+            this.addDiapersToCartBtn.Size = new System.Drawing.Size(44, 40);
+            this.addDiapersToCartBtn.TabIndex = 8;
+            this.addDiapersToCartBtn.Text = "+";
+            this.addDiapersToCartBtn.UseVisualStyleBackColor = false;
+            this.addDiapersToCartBtn.Click += new System.EventHandler(this.addDiapersToCartBtn_Click);
+            // 
+            // priceItem6Lbl
+            // 
+            this.priceItem6Lbl.AutoSize = true;
+            this.priceItem6Lbl.Location = new System.Drawing.Point(389, 120);
+            this.priceItem6Lbl.Name = "priceItem6Lbl";
+            this.priceItem6Lbl.Size = new System.Drawing.Size(78, 25);
+            this.priceItem6Lbl.TabIndex = 3;
+            this.priceItem6Lbl.Text = "$24.00";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(316, 120);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(67, 25);
+            this.label17.TabIndex = 2;
+            this.label17.Text = "Price:";
+            // 
+            // item6TitleLbl
+            // 
+            this.item6TitleLbl.AutoSize = true;
+            this.item6TitleLbl.Location = new System.Drawing.Point(346, 85);
+            this.item6TitleLbl.Name = "item6TitleLbl";
+            this.item6TitleLbl.Size = new System.Drawing.Size(86, 25);
+            this.item6TitleLbl.TabIndex = 1;
+            this.item6TitleLbl.Text = "Diapers";
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox7.InitialImage")));
+            this.pictureBox7.Location = new System.Drawing.Point(45, 14);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(228, 239);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 0;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.WaitOnLoad = true;
+            // 
             // panel11
             // 
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel11.Controls.Add(this.deleteWindexFromCart);
             this.panel11.Controls.Add(this.addWindexToCartBtn);
-            this.panel11.Controls.Add(this.label25);
+            this.panel11.Controls.Add(this.priceItem8Lbl);
             this.panel11.Controls.Add(this.label26);
-            this.panel11.Controls.Add(this.label27);
+            this.panel11.Controls.Add(this.item8TitleLbl);
             this.panel11.Controls.Add(this.pictureBox10);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(511, 855);
+            this.panel11.Location = new System.Drawing.Point(638, 864);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(503, 281);
+            this.panel11.Size = new System.Drawing.Size(630, 282);
             this.panel11.TabIndex = 11;
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox10.InitialImage")));
-            this.pictureBox10.Location = new System.Drawing.Point(45, 28);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(247, 191);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox10.TabIndex = 0;
-            this.pictureBox10.TabStop = false;
-            this.pictureBox10.WaitOnLoad = true;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(348, 65);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(84, 25);
-            this.label27.TabIndex = 1;
-            this.label27.Text = "Windex";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(316, 97);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(67, 25);
-            this.label26.TabIndex = 2;
-            this.label26.Text = "Price:";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(389, 97);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(66, 25);
-            this.label25.TabIndex = 3;
-            this.label25.Text = "$8.00";
-            // 
-            // addWindexToCartBtn
-            // 
-            this.addWindexToCartBtn.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.addWindexToCartBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addWindexToCartBtn.ForeColor = System.Drawing.Color.White;
-            this.addWindexToCartBtn.Location = new System.Drawing.Point(339, 137);
-            this.addWindexToCartBtn.Name = "addWindexToCartBtn";
-            this.addWindexToCartBtn.Size = new System.Drawing.Size(44, 40);
-            this.addWindexToCartBtn.TabIndex = 8;
-            this.addWindexToCartBtn.Text = "+";
-            this.addWindexToCartBtn.UseVisualStyleBackColor = false;
-            this.addWindexToCartBtn.Click += new System.EventHandler(this.addWindexToCartBtn_Click);
             // 
             // deleteWindexFromCart
             // 
@@ -932,73 +908,73 @@
             this.deleteWindexFromCart.UseVisualStyleBackColor = false;
             this.deleteWindexFromCart.Click += new System.EventHandler(this.deleteWindexFromCart_Click);
             // 
+            // addWindexToCartBtn
+            // 
+            this.addWindexToCartBtn.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.addWindexToCartBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addWindexToCartBtn.ForeColor = System.Drawing.Color.White;
+            this.addWindexToCartBtn.Location = new System.Drawing.Point(339, 137);
+            this.addWindexToCartBtn.Name = "addWindexToCartBtn";
+            this.addWindexToCartBtn.Size = new System.Drawing.Size(44, 40);
+            this.addWindexToCartBtn.TabIndex = 8;
+            this.addWindexToCartBtn.Text = "+";
+            this.addWindexToCartBtn.UseVisualStyleBackColor = false;
+            this.addWindexToCartBtn.Click += new System.EventHandler(this.addWindexToCartBtn_Click);
+            // 
+            // priceItem8Lbl
+            // 
+            this.priceItem8Lbl.AutoSize = true;
+            this.priceItem8Lbl.Location = new System.Drawing.Point(389, 97);
+            this.priceItem8Lbl.Name = "priceItem8Lbl";
+            this.priceItem8Lbl.Size = new System.Drawing.Size(66, 25);
+            this.priceItem8Lbl.TabIndex = 3;
+            this.priceItem8Lbl.Text = "$8.00";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(316, 97);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(67, 25);
+            this.label26.TabIndex = 2;
+            this.label26.Text = "Price:";
+            // 
+            // item8TitleLbl
+            // 
+            this.item8TitleLbl.AutoSize = true;
+            this.item8TitleLbl.Location = new System.Drawing.Point(348, 65);
+            this.item8TitleLbl.Name = "item8TitleLbl";
+            this.item8TitleLbl.Size = new System.Drawing.Size(84, 25);
+            this.item8TitleLbl.TabIndex = 1;
+            this.item8TitleLbl.Text = "Windex";
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
+            this.pictureBox10.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox10.InitialImage")));
+            this.pictureBox10.Location = new System.Drawing.Point(45, 28);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(247, 191);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox10.TabIndex = 0;
+            this.pictureBox10.TabStop = false;
+            this.pictureBox10.WaitOnLoad = true;
+            // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.murphysOilMinusBtn);
             this.panel3.Controls.Add(this.AddMurphysOilToCartBtn);
-            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.priceItem1Lbl);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.item1TitleLbl);
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(502, 278);
+            this.panel3.Size = new System.Drawing.Size(629, 281);
             this.panel3.TabIndex = 5;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
-            this.pictureBox2.Location = new System.Drawing.Point(23, 23);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(257, 225);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.WaitOnLoad = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(311, 63);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(131, 25);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Murphy\'s Oil";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(311, 104);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 25);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Price:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(384, 104);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 25);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "$8.00";
-            // 
-            // AddMurphysOilToCartBtn
-            // 
-            this.AddMurphysOilToCartBtn.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.AddMurphysOilToCartBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddMurphysOilToCartBtn.ForeColor = System.Drawing.Color.White;
-            this.AddMurphysOilToCartBtn.Location = new System.Drawing.Point(331, 150);
-            this.AddMurphysOilToCartBtn.Name = "AddMurphysOilToCartBtn";
-            this.AddMurphysOilToCartBtn.Size = new System.Drawing.Size(44, 40);
-            this.AddMurphysOilToCartBtn.TabIndex = 4;
-            this.AddMurphysOilToCartBtn.Text = "+";
-            this.AddMurphysOilToCartBtn.UseVisualStyleBackColor = false;
-            this.AddMurphysOilToCartBtn.Click += new System.EventHandler(this.addMurphysOilToCart);
             // 
             // murphysOilMinusBtn
             // 
@@ -1013,73 +989,73 @@
             this.murphysOilMinusBtn.UseVisualStyleBackColor = false;
             this.murphysOilMinusBtn.Click += new System.EventHandler(this.murphysOilMinusBtn_Click);
             // 
+            // AddMurphysOilToCartBtn
+            // 
+            this.AddMurphysOilToCartBtn.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.AddMurphysOilToCartBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddMurphysOilToCartBtn.ForeColor = System.Drawing.Color.White;
+            this.AddMurphysOilToCartBtn.Location = new System.Drawing.Point(331, 150);
+            this.AddMurphysOilToCartBtn.Name = "AddMurphysOilToCartBtn";
+            this.AddMurphysOilToCartBtn.Size = new System.Drawing.Size(44, 40);
+            this.AddMurphysOilToCartBtn.TabIndex = 4;
+            this.AddMurphysOilToCartBtn.Text = "+";
+            this.AddMurphysOilToCartBtn.UseVisualStyleBackColor = false;
+            this.AddMurphysOilToCartBtn.Click += new System.EventHandler(this.addMurphysOilToCart);
+            // 
+            // priceItem1Lbl
+            // 
+            this.priceItem1Lbl.AutoSize = true;
+            this.priceItem1Lbl.Location = new System.Drawing.Point(384, 104);
+            this.priceItem1Lbl.Name = "priceItem1Lbl";
+            this.priceItem1Lbl.Size = new System.Drawing.Size(66, 25);
+            this.priceItem1Lbl.TabIndex = 3;
+            this.priceItem1Lbl.Text = "$8.00";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(311, 104);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 25);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Price:";
+            // 
+            // item1TitleLbl
+            // 
+            this.item1TitleLbl.AutoSize = true;
+            this.item1TitleLbl.Location = new System.Drawing.Point(311, 63);
+            this.item1TitleLbl.Name = "item1TitleLbl";
+            this.item1TitleLbl.Size = new System.Drawing.Size(131, 25);
+            this.item1TitleLbl.TabIndex = 1;
+            this.item1TitleLbl.Text = "Murphy\'s Oil";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
+            this.pictureBox2.Location = new System.Drawing.Point(23, 23);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(257, 225);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.WaitOnLoad = true;
+            // 
             // panel13
             // 
             this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel13.Controls.Add(this.DeleteToiletPapersFromCart);
             this.panel13.Controls.Add(this.addToiletPaperBtn);
-            this.panel13.Controls.Add(this.label28);
+            this.panel13.Controls.Add(this.priceItem7Lbl);
             this.panel13.Controls.Add(this.label29);
-            this.panel13.Controls.Add(this.label30);
+            this.panel13.Controls.Add(this.item7TitleLbl);
             this.panel13.Controls.Add(this.pictureBox11);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel13.Location = new System.Drawing.Point(3, 855);
+            this.panel13.Location = new System.Drawing.Point(3, 864);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(502, 281);
+            this.panel13.Size = new System.Drawing.Size(629, 282);
             this.panel13.TabIndex = 5;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox11.InitialImage")));
-            this.pictureBox11.Location = new System.Drawing.Point(23, 28);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(257, 209);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox11.TabIndex = 0;
-            this.pictureBox11.TabStop = false;
-            this.pictureBox11.WaitOnLoad = true;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(319, 82);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(128, 25);
-            this.label30.TabIndex = 1;
-            this.label30.Text = "Toilet Paper";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(311, 114);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(67, 25);
-            this.label29.TabIndex = 2;
-            this.label29.Text = "Price:";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(384, 114);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(78, 25);
-            this.label28.TabIndex = 3;
-            this.label28.Text = "$16.00";
-            // 
-            // addToiletPaperBtn
-            // 
-            this.addToiletPaperBtn.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.addToiletPaperBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addToiletPaperBtn.ForeColor = System.Drawing.Color.White;
-            this.addToiletPaperBtn.Location = new System.Drawing.Point(334, 154);
-            this.addToiletPaperBtn.Name = "addToiletPaperBtn";
-            this.addToiletPaperBtn.Size = new System.Drawing.Size(44, 40);
-            this.addToiletPaperBtn.TabIndex = 8;
-            this.addToiletPaperBtn.Text = "+";
-            this.addToiletPaperBtn.UseVisualStyleBackColor = false;
-            this.addToiletPaperBtn.Click += new System.EventHandler(this.addToiletPaperBtn_Click);
             // 
             // DeleteToiletPapersFromCart
             // 
@@ -1094,6 +1070,59 @@
             this.DeleteToiletPapersFromCart.UseVisualStyleBackColor = false;
             this.DeleteToiletPapersFromCart.Click += new System.EventHandler(this.DeleteToiletPapersFromCart_Click);
             // 
+            // addToiletPaperBtn
+            // 
+            this.addToiletPaperBtn.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.addToiletPaperBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addToiletPaperBtn.ForeColor = System.Drawing.Color.White;
+            this.addToiletPaperBtn.Location = new System.Drawing.Point(334, 154);
+            this.addToiletPaperBtn.Name = "addToiletPaperBtn";
+            this.addToiletPaperBtn.Size = new System.Drawing.Size(44, 40);
+            this.addToiletPaperBtn.TabIndex = 8;
+            this.addToiletPaperBtn.Text = "+";
+            this.addToiletPaperBtn.UseVisualStyleBackColor = false;
+            this.addToiletPaperBtn.Click += new System.EventHandler(this.addToiletPaperBtn_Click);
+            // 
+            // priceItem7Lbl
+            // 
+            this.priceItem7Lbl.AutoSize = true;
+            this.priceItem7Lbl.Location = new System.Drawing.Point(384, 114);
+            this.priceItem7Lbl.Name = "priceItem7Lbl";
+            this.priceItem7Lbl.Size = new System.Drawing.Size(78, 25);
+            this.priceItem7Lbl.TabIndex = 3;
+            this.priceItem7Lbl.Text = "$16.00";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(311, 114);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(67, 25);
+            this.label29.TabIndex = 2;
+            this.label29.Text = "Price:";
+            // 
+            // item7TitleLbl
+            // 
+            this.item7TitleLbl.AutoSize = true;
+            this.item7TitleLbl.Location = new System.Drawing.Point(319, 82);
+            this.item7TitleLbl.Name = "item7TitleLbl";
+            this.item7TitleLbl.Size = new System.Drawing.Size(128, 25);
+            this.item7TitleLbl.TabIndex = 1;
+            this.item7TitleLbl.Text = "Toilet Paper";
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
+            this.pictureBox11.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox11.InitialImage")));
+            this.pictureBox11.Location = new System.Drawing.Point(23, 28);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(257, 209);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox11.TabIndex = 0;
+            this.pictureBox11.TabStop = false;
+            this.pictureBox11.WaitOnLoad = true;
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -1107,14 +1136,14 @@
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel4, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel5, 1, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(387, 163);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(477, 101);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1017, 1139);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1271, 1149);
             this.tableLayoutPanel1.TabIndex = 10;
             // 
             // Form1
@@ -1124,7 +1153,8 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1974, 1647);
+            this.CancelButton = this.logOutBtn;
+            this.ClientSize = new System.Drawing.Size(1974, 1692);
             this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
@@ -1145,7 +1175,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel14.ResumeLayout(false);
-            this.panel14.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -1205,60 +1234,62 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button deleteTissueFromCartBtn;
         private System.Windows.Forms.Button addTissueToCartBtn;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label priceItem2Lbl;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label item2TitleLbl;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button DeleteWipesFromCartBtn;
         private System.Windows.Forms.Button addWipesToCartBtn;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label priceItem3Lbl;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label item3TitleLbl;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button deleteNapkinsFromCartBtn;
         private System.Windows.Forms.Button addNapkinsToCartBtn;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label priceItem4Lbl;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label item4TitleLbl;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Button deletePaperTowelsFromCart;
         private System.Windows.Forms.Button addPaperTowelsToCartBtn;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label priceItem5Lbl;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label item5TitleLbl;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button deleteDiapersFromCartBtn;
         private System.Windows.Forms.Button addDiapersToCartBtn;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label priceItem6Lbl;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label item6TitleLbl;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Button deleteWindexFromCart;
         private System.Windows.Forms.Button addWindexToCartBtn;
-        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label priceItem8Lbl;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label item8TitleLbl;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button murphysOilMinusBtn;
         private System.Windows.Forms.Button AddMurphysOilToCartBtn;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label priceItem1Lbl;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label item1TitleLbl;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Button DeleteToiletPapersFromCart;
         private System.Windows.Forms.Button addToiletPaperBtn;
-        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label priceItem7Lbl;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label item7TitleLbl;
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
     }
 }
 
