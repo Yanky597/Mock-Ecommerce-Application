@@ -261,6 +261,9 @@ namespace TermProjectMCON368
 
         private void SubmitOrderBtn_Click(object sender, EventArgs e)
         {
+            String errorMessage = "Something went wrong while checking out";
+
+            checkoutErrorMessage.Text = errorMessage;
 
             if (userSession != null)
             {
@@ -281,6 +284,15 @@ namespace TermProjectMCON368
                         }
                         else
                         {
+                            if (userSession.getCurrentUsersBalanceDue() > PurchaseOperations.BALANCE_DUE_LIMIT) 
+                            {
+                                checkoutErrorMessage.Text = "Your Balance Due is too high";
+                            }
+                            if (userSession.getCartSize() < 1) 
+                            {
+                                checkoutErrorMessage.Text = "You need to add an item to the cart";
+                            }
+
                             checkoutErrorMessage.Visible = true;
                         }
 
