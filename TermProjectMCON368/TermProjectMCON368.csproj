@@ -85,6 +85,10 @@
     <None Include="MyDatabaseClasses.dbml.layout">
       <DependentUpon>MyDatabaseClasses.dbml</DependentUpon>
     </None>
+    <None Include="Properties\DataSources\INVOICE.datasource" />
+    <None Include="Properties\DataSources\INVOICE_ROW.datasource" />
+    <None Include="Properties\DataSources\TermProjectMCON368.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\TermProjectMCON368.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

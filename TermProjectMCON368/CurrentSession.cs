@@ -162,7 +162,10 @@ namespace TermProjectMCON368
             PurchaseOperations.deleteItemFromCart(ProductID, shoppingCart);
         }
 
-
+        public List<INVOICE> getUsersInvoices() 
+        {
+           return  CustomerOperations.getUsersInvoices(ID);
+        }
 
     }
 }

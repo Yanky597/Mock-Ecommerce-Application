@@ -4,6 +4,7 @@ using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
 using Microsoft.VisualBasic;
+using System.Drawing;
 
 namespace TermProjectMCON368
 {
@@ -33,6 +34,8 @@ namespace TermProjectMCON368
 
         private void setupItemsToPurchase(DataClasses1DataContext dataBaseConnection)
         {
+            OrderHistoryGroupBox.Visible = false;
+            tableLayoutPanel1.Visible = true;
             ProductOperations.dbConnection = dataBaseConnection;
             var productNames = ProductOperations.getListOfProductNames();
             var productPrices = ProductOperations.getListOfProductPrices();
@@ -240,6 +243,12 @@ namespace TermProjectMCON368
             listViewItemsInCart.Items.Clear();
             totalAmountLbl.Text = "$0.00";
 
+            using (var dataBaseConnection = new DataClasses1DataContext())
+            {
+                setupItemsToPurchase(dataBaseConnection);
+
+            }
+
         }
 
 
@@ -362,6 +371,103 @@ namespace TermProjectMCON368
         }
 
         private void panel14_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void displayOrdersTable_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void viewCustomerHistory_Click(object sender, EventArgs e)
+        {
+            using (var dataBaseConnection = new DataClasses1DataContext())
+            {
+                userSession.resetDbConnection(dataBaseConnection);
+
+
+                tableLayoutPanel1.Visible = false;
+                dataGridDisplayInvoices.Visible = true;
+                dataGridInvoice_Row.Visible = false;
+                dataGridDisplayInvoices.DataSource = userSession.getUsersInvoices();
+                OrderHistoryGroupBox.Visible = true;
+                goBackToProductViewBtn.Visible = true;
+                RightPanelShoppingCart.Visible = false;
+                FilterByDateGroup.Visible = true;
+                FilterByPriceGroup.Visible = true;
+
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                using (var dataBaseConnection = new DataClasses1DataContext())
+                {
+                    CustomerOperations.dbConnection = dataBaseConnection;
+                    var mySelectRow = dataGridDisplayInvoices.SelectedRows[0].DataBoundItem as INVOICE;
+                    //MessageBox.Show(mySelectRow.CUS_ID);
+                    String invoiceID = mySelectRow.INV_ID;
+                    dataGridInvoice_Row.DataSource = CustomerOperations.getUsersInvoiceRows(invoiceID);
+                    dataGridDisplayInvoices.Visible = false;
+                    dataGridInvoice_Row.Visible = true;
+                    goBackToProductViewBtn.Visible = false;
+
+                }
+
+            }
+            catch (Exception E)
+            {
+                MessageBox.Show(E.Message);
+            }
+        }
+
+        private void goBackToProductViewBtn_Click(object sender, EventArgs e)
+        {
+            using (var dataBaseConnection = new DataClasses1DataContext())
+            {
+                setupItemsToPurchase(dataBaseConnection);
+                goBackToProductViewBtn.Visible = false;
+                RightPanelShoppingCart.Visible = true;
+                FilterByDateGroup.Visible = false;
+                FilterByPriceGroup.Visible = false;
+
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+        }
+
+        private void label3_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click_3(object sender, EventArgs e)
         {
 
         }

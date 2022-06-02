@@ -31,6 +31,14 @@ namespace TermProjectMCON368
               .Select(customer => customer.CUS_FNAME + " " + customer.CUS_LNAME).First();
         }
 
-        //public static createNewUser() { }
+        public static List<INVOICE> getUsersInvoices(String userID) 
+        {
+            return dbConnection.INVOICEs.Where(user => user.CUS_ID == userID ).ToList();
+        }
+
+        public static List<INVOICE_ROW> getUsersInvoiceRows(String InvoiceID)
+        {
+            return dbConnection.INVOICE_ROWs.Where(invoice => invoice.INV_ID == InvoiceID).ToList();
+        }
     }
 }
