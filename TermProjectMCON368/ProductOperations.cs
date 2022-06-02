@@ -20,18 +20,18 @@ namespace TermProjectMCON368
             return dbConnection.PRODUCTs.Select(product => product.PRO_SALE_P).ToList();
         }
 
-        public static decimal getProductPrice(String productID) 
+        public static decimal getProductPrice(String productID)
         {
             return dbConnection.PRODUCTs
                 .Where(product => product.PRO_ID == productID)
                 .Select(product => product.PRO_SALE_P).First();
         }
 
-        public static decimal getCartTotal(Dictionary<String, int> shoppingCart) 
+        public static decimal getCartTotal(Dictionary<String, int> shoppingCart)
         {
             decimal total = 0;
             decimal price;
-            foreach (var item in shoppingCart) 
+            foreach (var item in shoppingCart)
             {
                 // get a reference to the item in the cart by getting its ID
                 price = getProductPrice(item.Key);

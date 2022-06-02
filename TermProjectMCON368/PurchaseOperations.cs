@@ -23,7 +23,12 @@ namespace TermProjectMCON368
         {
             CUSTOMER_BALANCE currentCustomer = getCurrentCustomer(customerID);
 
-            if(currentCustomer.BALANCE_DUE != null && amountToBePaid <= getCurrentCustomerBalance(customerID)) 
+            if (currentCustomer.BALANCE_DUE == null) 
+            {
+                currentCustomer.BALANCE_DUE = 0;
+            }
+
+            if (amountToBePaid <= getCurrentCustomerBalance(customerID))
             {
                 currentCustomer.CUS_BALANCE = currentCustomer.CUS_BALANCE - amountToBePaid;
                 currentCustomer.BALANCE_DUE = currentCustomer.BALANCE_DUE - amountToBePaid;
@@ -50,7 +55,7 @@ namespace TermProjectMCON368
 
         public static void addItemToCart(String productId, Dictionary<String, int> shoppingCart)
         {
-            if (shoppingCart.ContainsKey(productId)) 
+            if (shoppingCart.ContainsKey(productId))
             {
                 shoppingCart[productId] += 1;
                 return;
@@ -65,25 +70,25 @@ namespace TermProjectMCON368
             // remove one element from the cart.
             // else delete the item from the cart
             // if quantity > 1, then after deleting a product there will be at least 1 product left
-            if (shoppingCart.ContainsKey(productId)) 
+            if (shoppingCart.ContainsKey(productId))
             {
                 if (shoppingCart[productId] > 1)
                 {
                     shoppingCart[productId] -= 1;
                 }
-                else 
+                else
                 {
                     shoppingCart.Remove(productId);
                 }
             }
-      
-       
+
+
         }
 
         public static bool userCanMakePurchase(String userID, decimal ShoppingCartTotal)
         {
-           
-            if(getCurrentCustomer(userID).BALANCE_DUE == null) 
+
+            if (getCurrentCustomer(userID).BALANCE_DUE == null)
             {
                 getCurrentCustomer(userID).BALANCE_DUE = 0;
                 dbConnection.SubmitChanges();
@@ -95,7 +100,7 @@ namespace TermProjectMCON368
         public static bool submitOrder(String userID, Dictionary<String, int> shoppingCart)
         {
 
-            if (userCanMakePurchase(userID, ProductOperations.getCartTotal(shoppingCart)) && shoppingCart.Count > 0) 
+            if (userCanMakePurchase(userID, ProductOperations.getCartTotal(shoppingCart)) && shoppingCart.Count > 0)
             {
                 String invoiceID = generateAndGetUniqueId();
                 createInvoice(userID, invoiceID, shoppingCart);
@@ -120,7 +125,7 @@ namespace TermProjectMCON368
 
         }
 
-        public static void createInvoice(String customerID, String invoiceID, Dictionary<String, int> shoppingCart) 
+        public static void createInvoice(String customerID, String invoiceID, Dictionary<String, int> shoppingCart)
         {
             INVOICE createInvoice = new INVOICE()
             {
@@ -135,11 +140,11 @@ namespace TermProjectMCON368
             dbConnection.SubmitChanges();
         }
 
-        public static void createInvoiceRows(String invoiceID, Dictionary<String, int> shoppingCart) 
+        public static void createInvoiceRows(String invoiceID, Dictionary<String, int> shoppingCart)
         {
             INVOICE_ROW invoiceRow = new INVOICE_ROW();
 
-            foreach (var product in shoppingCart) 
+            foreach (var product in shoppingCart)
             {
                 decimal productPrice = ProductOperations.getProductPrice(product.Key);
                 invoiceRow = new INVOICE_ROW()
@@ -157,15 +162,12 @@ namespace TermProjectMCON368
         }
 
 
-        public static String generateAndGetUniqueId() 
+        public static String generateAndGetUniqueId()
         {
 
             // gets the highest generated invoice Id and increments it by one
             return (Convert.ToInt32(dbConnection.INVOICEs
                 .OrderByDescending(row => row.INV_DATE).Select(row => row.INV_ID).First()) + 1).ToString();
-            
         }
-
-
     }
 }

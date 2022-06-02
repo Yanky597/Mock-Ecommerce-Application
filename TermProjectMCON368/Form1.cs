@@ -11,9 +11,6 @@ namespace TermProjectMCON368
     public partial class Form1 : Form
     {
 
-
-        //public static DataClasses1DataContext dataBaseConnection;
-        //static CurrentSession userSession;
         CurrentSession userSession;
 
         public Form1()
@@ -22,13 +19,13 @@ namespace TermProjectMCON368
 
 
 
-            //Server Explorer
-
+            // Here is a username and password if you dont want to get 1 from the database.
+            // Username:  MarinaQu79
+            // Password:  qWUzM^e4sFBt38s3onb$UDufLRF3Z3!1*r#*tS&c3irh9gSDDcA&mMRXFDgMm^ycyUcfD!pvRnr6Pn7Kgn@76V4b&t4*OM!gKgKZ!lI1#7M6fYSUGO30GRkR5r%kJHktX&or8A&wtkZU5CjEXd1&xMwzO&UzTWb2VHlZIx0t2!kADUUEGn*fdM#ur@NppK$FGX$rQXn%Gx0B3&Gc4q2^C0gKqS&1qAibu54b13D#O*fi%MyN$NG^
 
             using (var dataBaseConnection = new DataClasses1DataContext())
             {
                 setupItemsToPurchase(dataBaseConnection);
-
             }
         }
 
@@ -95,7 +92,7 @@ namespace TermProjectMCON368
 
         }
 
-        private void renderListViewOfCartAfterAddingProduct(String productID) 
+        private void renderListViewOfCartAfterAddingProduct(String productID)
         {
             if (userSession != null)
             {
@@ -106,7 +103,6 @@ namespace TermProjectMCON368
 
                     listViewItemsInCart.Items.Clear();
 
-                    //ProductOperations.dbConnection = dataBaseConnection;
                     for (int i = 0; i < userSession.GetShoppingCartAsList().Count; i++)
                     {
                         listViewItemsInCart.Items.Add(userSession.GetShoppingCartAsList()[i], i);
@@ -130,7 +126,7 @@ namespace TermProjectMCON368
             renderListViewOfCartAfterAddingProduct("22");
         }
 
-        private void renderListViewOfCartAfterDeletingProduct(String productID) 
+        private void renderListViewOfCartAfterDeletingProduct(String productID)
         {
             if (userSession != null)
             {
@@ -146,12 +142,13 @@ namespace TermProjectMCON368
                     {
                         listViewItemsInCart.Items.Add(userSession.GetShoppingCartAsList()[i], i);
                     }
-                    totalAmountLbl.Text = "$"+userSession.getCartTotal().ToString();
+                    totalAmountLbl.Text = "$" + userSession.getCartTotal().ToString();
 
                 }
             }
         }
 
+        /* The following event handlers are to add and delete individual items from the cart */
         private void murphysOilMinusBtn_Click(object sender, EventArgs e)
         {
             renderListViewOfCartAfterDeletingProduct("22");
@@ -262,7 +259,7 @@ namespace TermProjectMCON368
             clearCartViews();
         }
 
-        public void clearCartViews() 
+        public void clearCartViews()
         {
             if (userSession != null)
             {
@@ -298,11 +295,11 @@ namespace TermProjectMCON368
                         }
                         else
                         {
-                            if (userSession.getCurrentUsersBalanceDue() > PurchaseOperations.BALANCE_DUE_LIMIT) 
+                            if (userSession.getCurrentUsersBalanceDue() > PurchaseOperations.BALANCE_DUE_LIMIT)
                             {
                                 checkoutErrorMessage.Text = "Your Balance Due is too high";
                             }
-                            if (userSession.getCartSize() < 1) 
+                            if (userSession.getCartSize() < 1)
                             {
                                 checkoutErrorMessage.Text = "You need to add an item to the cart";
                             }
@@ -323,31 +320,6 @@ namespace TermProjectMCON368
             }
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void payBalanceClick(object sender, EventArgs e)
         {
             try
@@ -359,7 +331,7 @@ namespace TermProjectMCON368
                 {
                     userSession.resetDbConnection(dataBaseConnection);
 
-                    if (userSession.payBalanceDue(input)) 
+                    if (userSession.payBalanceDue(input))
                     {
                         usersBalanceLbl.Text = "$" + userSession.CustomerBalance.ToString();
                         balanceDueAmountLbl.Text = "$" + userSession.getCurrentUsersBalanceDue().ToString();
@@ -372,35 +344,15 @@ namespace TermProjectMCON368
             {
                 MessageBox.Show("Input can only be numeric", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-           
-        }
-
-        private void panel14_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void displayOrdersTable_Paint(object sender, PaintEventArgs e)
-        {
 
         }
 
         private void viewCustomerHistory_Click(object sender, EventArgs e)
+        {
+            renderInvoiceHistory();
+        }
+
+        private void renderInvoiceHistory()
         {
             using (var dataBaseConnection = new DataClasses1DataContext())
             {
@@ -428,7 +380,6 @@ namespace TermProjectMCON368
                 {
                     CustomerOperations.dbConnection = dataBaseConnection;
                     var mySelectRow = dataGridDisplayInvoices.SelectedRows[0].DataBoundItem as INVOICE;
-                    //MessageBox.Show(mySelectRow.CUS_ID);
                     String invoiceID = mySelectRow.INV_ID;
                     dataGridInvoice_Row.DataSource = CustomerOperations.getUsersInvoiceRows(invoiceID);
                     dataGridDisplayInvoices.Visible = false;
@@ -457,26 +408,6 @@ namespace TermProjectMCON368
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-
-        }
-
-        private void label3_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click_3(object sender, EventArgs e)
-        {
-
-        }
-
         private void getInvoicesInPriceRange_Click(object sender, EventArgs e)
         {
             try
@@ -484,7 +415,7 @@ namespace TermProjectMCON368
                 decimal lowValue = Convert.ToDecimal(filterLowValue.Text);
                 decimal highValue = Convert.ToDecimal(filterHighValue.Text);
 
-                if (lowValue < highValue) 
+                if (lowValue < highValue)
                 {
                     using (var dataBaseConnection = new DataClasses1DataContext())
                     {
@@ -503,7 +434,7 @@ namespace TermProjectMCON368
                     }
                 }
             }
-            catch (Exception E) 
+            catch (Exception E)
             {
                 MessageBox.Show("Make sure your inputs are numeric");
             }
@@ -539,6 +470,13 @@ namespace TermProjectMCON368
             {
                 MessageBox.Show("Make sure your dates are correct");
             }
+        }
+
+        private void resetFiltersBtn_Click(object sender, EventArgs e)
+        {
+            renderInvoiceHistory();
+            filterLowValue.Text = "";
+            filterHighValue.Text = "";
         }
     }
 }

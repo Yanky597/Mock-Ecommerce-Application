@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             ""}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.WelcomeGuestlbl = new System.Windows.Forms.Label();
@@ -52,6 +52,7 @@
             this.balanceTitleLbl = new System.Windows.Forms.Label();
             this.goBackToProductViewBtn = new System.Windows.Forms.Button();
             this.FilterByDateGroup = new System.Windows.Forms.Panel();
+            this.resetFiltersBtn = new System.Windows.Forms.Button();
             this.filterByDateTitleLbl = new System.Windows.Forms.Label();
             this.filterByDateBtn = new System.Windows.Forms.Button();
             this.EndDateLbl = new System.Windows.Forms.Label();
@@ -337,7 +338,6 @@
             this.balanceDueAmountLbl.Size = new System.Drawing.Size(130, 51);
             this.balanceDueAmountLbl.TabIndex = 9;
             this.balanceDueAmountLbl.Text = "$0.00";
-            this.balanceDueAmountLbl.Click += new System.EventHandler(this.label3_Click);
             // 
             // label1
             // 
@@ -428,6 +428,7 @@
             // 
             // FilterByDateGroup
             // 
+            this.FilterByDateGroup.Controls.Add(this.resetFiltersBtn);
             this.FilterByDateGroup.Controls.Add(this.filterByDateTitleLbl);
             this.FilterByDateGroup.Controls.Add(this.filterByDateBtn);
             this.FilterByDateGroup.Controls.Add(this.EndDateLbl);
@@ -436,9 +437,21 @@
             this.FilterByDateGroup.Controls.Add(this.dateTimePickerStart);
             this.FilterByDateGroup.Location = new System.Drawing.Point(26, 402);
             this.FilterByDateGroup.Name = "FilterByDateGroup";
-            this.FilterByDateGroup.Size = new System.Drawing.Size(243, 369);
+            this.FilterByDateGroup.Size = new System.Drawing.Size(243, 469);
             this.FilterByDateGroup.TabIndex = 6;
             this.FilterByDateGroup.Visible = false;
+            // 
+            // resetFiltersBtn
+            // 
+            this.resetFiltersBtn.BackColor = System.Drawing.Color.Maroon;
+            this.resetFiltersBtn.ForeColor = System.Drawing.Color.White;
+            this.resetFiltersBtn.Location = new System.Drawing.Point(41, 385);
+            this.resetFiltersBtn.Name = "resetFiltersBtn";
+            this.resetFiltersBtn.Size = new System.Drawing.Size(144, 41);
+            this.resetFiltersBtn.TabIndex = 7;
+            this.resetFiltersBtn.Text = "Reset";
+            this.resetFiltersBtn.UseVisualStyleBackColor = false;
+            this.resetFiltersBtn.Click += new System.EventHandler(this.resetFiltersBtn_Click);
             // 
             // filterByDateTitleLbl
             // 
@@ -469,7 +482,6 @@
             this.EndDateLbl.Size = new System.Drawing.Size(101, 25);
             this.EndDateLbl.TabIndex = 4;
             this.EndDateLbl.Text = "End Date";
-            this.EndDateLbl.Click += new System.EventHandler(this.label3_Click_2);
             // 
             // dateTimePickerEnd
             // 
@@ -477,7 +489,6 @@
             this.dateTimePickerEnd.Name = "dateTimePickerEnd";
             this.dateTimePickerEnd.Size = new System.Drawing.Size(193, 31);
             this.dateTimePickerEnd.TabIndex = 3;
-            this.dateTimePickerEnd.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // startDateLbl
             // 
@@ -487,7 +498,6 @@
             this.startDateLbl.Size = new System.Drawing.Size(108, 25);
             this.startDateLbl.TabIndex = 1;
             this.startDateLbl.Text = "Start Date";
-            this.startDateLbl.Click += new System.EventHandler(this.label3_Click_1);
             // 
             // dateTimePickerStart
             // 
@@ -495,7 +505,6 @@
             this.dateTimePickerStart.Name = "dateTimePickerStart";
             this.dateTimePickerStart.Size = new System.Drawing.Size(193, 31);
             this.dateTimePickerStart.TabIndex = 0;
-            this.dateTimePickerStart.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // cartTextLbl
             // 
@@ -587,7 +596,7 @@
             this.listViewItemsInCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewItemsInCart.HideSelection = false;
             this.listViewItemsInCart.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
+            listViewItem1});
             this.listViewItemsInCart.LabelWrap = false;
             this.listViewItemsInCart.Location = new System.Drawing.Point(0, 187);
             this.listViewItemsInCart.Name = "listViewItemsInCart";
@@ -612,7 +621,7 @@
             this.headerLbl.ForeColor = System.Drawing.Color.White;
             this.headerLbl.Location = new System.Drawing.Point(0, 0);
             this.headerLbl.Name = "headerLbl";
-            this.headerLbl.Size = new System.Drawing.Size(2049, 66);
+            this.headerLbl.Size = new System.Drawing.Size(2066, 66);
             this.headerLbl.TabIndex = 8;
             this.headerLbl.Text = "Essentials.Com";
             this.headerLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -625,9 +634,8 @@
             this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel14.Location = new System.Drawing.Point(0, 0);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(2049, 66);
+            this.panel14.Size = new System.Drawing.Size(2066, 66);
             this.panel14.TabIndex = 9;
-            this.panel14.Paint += new System.Windows.Forms.PaintEventHandler(this.panel14_Paint);
             // 
             // label13
             // 
@@ -637,7 +645,7 @@
             this.label13.ForeColor = System.Drawing.Color.White;
             this.label13.Location = new System.Drawing.Point(0, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(2049, 66);
+            this.label13.Size = new System.Drawing.Size(2066, 66);
             this.label13.TabIndex = 9;
             this.label13.Text = "Essentials.Com";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -692,7 +700,6 @@
             this.priceItem2Lbl.Size = new System.Drawing.Size(78, 25);
             this.priceItem2Lbl.TabIndex = 3;
             this.priceItem2Lbl.Text = "$14.00";
-            this.priceItem2Lbl.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -702,7 +709,6 @@
             this.label5.Size = new System.Drawing.Size(67, 25);
             this.label5.TabIndex = 2;
             this.label5.Text = "Price:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // item2TitleLbl
             // 
@@ -712,7 +718,6 @@
             this.item2TitleLbl.Size = new System.Drawing.Size(87, 25);
             this.item2TitleLbl.TabIndex = 1;
             this.item2TitleLbl.Text = "Tissues";
-            this.item2TitleLbl.Click += new System.EventHandler(this.label6_Click);
             // 
             // pictureBox3
             // 
@@ -726,7 +731,6 @@
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.WaitOnLoad = true;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // panel7
             // 
@@ -1317,7 +1321,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1271, 1149);
             this.tableLayoutPanel1.TabIndex = 10;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // panel6
             // 
@@ -1444,7 +1447,6 @@
             this.dataGridDisplayInvoices.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridDisplayInvoices.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridDisplayInvoices.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGridDisplayInvoices.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellContentClick);
             // 
             // iNVIDDataGridViewTextBoxColumn
             // 
@@ -1579,7 +1581,6 @@
             this.FilterByInvoiceTotal.Size = new System.Drawing.Size(151, 37);
             this.FilterByInvoiceTotal.TabIndex = 6;
             this.FilterByInvoiceTotal.Text = "Filter By Price";
-            this.FilterByInvoiceTotal.Click += new System.EventHandler(this.label3_Click_3);
             // 
             // getInvoicesInPriceRangeBtn
             // 
@@ -1618,7 +1619,7 @@
             this.rightHandSideBackPanel.Controls.Add(this.RightPanelShoppingCart);
             this.rightHandSideBackPanel.Location = new System.Drawing.Point(1763, 104);
             this.rightHandSideBackPanel.Name = "rightHandSideBackPanel";
-            this.rightHandSideBackPanel.Size = new System.Drawing.Size(286, 1353);
+            this.rightHandSideBackPanel.Size = new System.Drawing.Size(303, 1353);
             this.rightHandSideBackPanel.TabIndex = 13;
             // 
             // Form1
@@ -1825,6 +1826,7 @@
         private System.Windows.Forms.TextBox filterLowValue;
         private System.Windows.Forms.TextBox filterHighValue;
         private System.Windows.Forms.Panel rightHandSideBackPanel;
+        private System.Windows.Forms.Button resetFiltersBtn;
     }
 }
 

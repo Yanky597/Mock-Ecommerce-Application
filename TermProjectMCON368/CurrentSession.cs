@@ -4,6 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+/*
+This class uses many of the static operations 
+thats actually executed by the other classes.
+Its main purpose is to hold the information
+of the current user i.e ID and keeps track
+of the shopping cart.
+*/
+
+
 namespace TermProjectMCON368
 {
     internal class CurrentSession
@@ -34,8 +44,6 @@ namespace TermProjectMCON368
             }
             private set { }
         }
-
-        public double ShoppingCartTotal;
 
         private Dictionary<String, int> shoppingCart = new Dictionary<String, int>();
 
@@ -131,7 +139,7 @@ namespace TermProjectMCON368
         public List<INVOICE> getInvoicesWithinDateRange(DateTime startDate, DateTime endDate)
         {
             return dbConnection.INVOICEs
-                .Where(invoice =>invoice.CUS_ID == ID && invoice.INV_DATE >= startDate && invoice.INV_DATE <= endDate).ToList();
+                .Where(invoice => invoice.CUS_ID == ID && invoice.INV_DATE >= startDate && invoice.INV_DATE <= endDate).ToList();
         }
 
         public decimal getCurrentUserBalance()
@@ -144,8 +152,6 @@ namespace TermProjectMCON368
             return CustomerOperations.getUsersBalanceDue(ID);
         }
 
-
-        // public addUser(newUserForm userInfo, String username, password)
 
         public void setSessionToLoggedOut()
         {
