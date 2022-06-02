@@ -249,6 +249,11 @@ namespace TermProjectMCON368
 
             }
 
+            RightPanelShoppingCart.Visible = true;
+            FilterByDateGroup.Visible = false;
+            FilterByPriceGroup.Visible = false;
+            goBackToProductViewBtn.Visible = false;
+
         }
 
 
@@ -470,6 +475,70 @@ namespace TermProjectMCON368
         private void label3_Click_3(object sender, EventArgs e)
         {
 
+        }
+
+        private void getInvoicesInPriceRange_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                decimal lowValue = Convert.ToDecimal(filterLowValue.Text);
+                decimal highValue = Convert.ToDecimal(filterHighValue.Text);
+
+                if (lowValue < highValue) 
+                {
+                    using (var dataBaseConnection = new DataClasses1DataContext())
+                    {
+                        userSession.resetDbConnection(dataBaseConnection);
+
+                        tableLayoutPanel1.Visible = false;
+                        dataGridDisplayInvoices.Visible = true;
+                        dataGridInvoice_Row.Visible = false;
+                        dataGridDisplayInvoices.DataSource = userSession.getUsersInvoicesInPriceRange(lowValue, highValue);
+                        OrderHistoryGroupBox.Visible = true;
+                        goBackToProductViewBtn.Visible = true;
+                        RightPanelShoppingCart.Visible = false;
+                        FilterByDateGroup.Visible = true;
+                        FilterByPriceGroup.Visible = true;
+
+                    }
+                }
+            }
+            catch (Exception E) 
+            {
+                MessageBox.Show("Make sure your inputs are numeric");
+            }
+        }
+
+        private void filterByDateBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DateTime startDate = Convert.ToDateTime(dateTimePickerStart.Value.Date);
+                DateTime endDate = Convert.ToDateTime(dateTimePickerEnd.Value.Date);
+
+                if (startDate < endDate)
+                {
+                    using (var dataBaseConnection = new DataClasses1DataContext())
+                    {
+                        userSession.resetDbConnection(dataBaseConnection);
+
+                        tableLayoutPanel1.Visible = false;
+                        dataGridDisplayInvoices.Visible = true;
+                        dataGridInvoice_Row.Visible = false;
+                        dataGridDisplayInvoices.DataSource = userSession.getInvoicesWithinDateRange(startDate, endDate);
+                        OrderHistoryGroupBox.Visible = true;
+                        goBackToProductViewBtn.Visible = true;
+                        RightPanelShoppingCart.Visible = false;
+                        FilterByDateGroup.Visible = true;
+                        FilterByPriceGroup.Visible = true;
+
+                    }
+                }
+            }
+            catch (Exception E)
+            {
+                MessageBox.Show("Make sure your dates are correct");
+            }
         }
     }
 }

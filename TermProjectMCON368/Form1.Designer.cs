@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             ""}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.WelcomeGuestlbl = new System.Windows.Forms.Label();
@@ -50,7 +50,12 @@
             this.usersBalanceLbl = new System.Windows.Forms.Label();
             this.logOutBtn = new System.Windows.Forms.Button();
             this.balanceTitleLbl = new System.Windows.Forms.Label();
+            this.goBackToProductViewBtn = new System.Windows.Forms.Button();
             this.FilterByDateGroup = new System.Windows.Forms.Panel();
+            this.filterByDateTitleLbl = new System.Windows.Forms.Label();
+            this.filterByDateBtn = new System.Windows.Forms.Button();
+            this.EndDateLbl = new System.Windows.Forms.Label();
+            this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
             this.startDateLbl = new System.Windows.Forms.Label();
             this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
             this.cartTextLbl = new System.Windows.Forms.Label();
@@ -124,9 +129,21 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.OrderHistoryGroupBox = new System.Windows.Forms.GroupBox();
+            this.dataGridInvoice_Row = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRO_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.INR_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.INR_QUANTITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.INR_DISCOUNT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.INR_FINAL_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iNVOICEROWBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridDisplayInvoices = new System.Windows.Forms.DataGridView();
+            this.iNVIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUS_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.INV_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.INV_TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iNVOICEBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.iNVOICEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.goBackToProductViewBtn = new System.Windows.Forms.Button();
             this.iNVOICEROWsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cUSIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eMPIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -135,30 +152,13 @@
             this.iNVREFCODEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cUSTOMERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iNVOICEBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.iNVOICEBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.iNVIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CUS_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.INV_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.INV_TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridInvoice_Row = new System.Windows.Forms.DataGridView();
-            this.iNVOICEROWBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRO_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.INR_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.INR_QUANTITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.INR_DISCOUNT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.INR_FINAL_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EndDateLbl = new System.Windows.Forms.Label();
-            this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
-            this.goBackToChoicesBtn = new System.Windows.Forms.Button();
-            this.filterByDateTitleLbl = new System.Windows.Forms.Label();
             this.FilterByPriceGroup = new System.Windows.Forms.Panel();
-            this.filterByInvoiceTotal = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.filterHighValue = new System.Windows.Forms.TextBox();
+            this.filterLowValue = new System.Windows.Forms.TextBox();
+            this.FilterByInvoiceTotal = new System.Windows.Forms.Label();
+            this.getInvoicesInPriceRangeBtn = new System.Windows.Forms.Button();
             this.HighLbl = new System.Windows.Forms.Label();
             this.LowLbl = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.rightHandSideBackPanel = new System.Windows.Forms.Panel();
             this.loginBx.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -186,13 +186,13 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.OrderHistoryGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridInvoice_Row)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iNVOICEROWBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDisplayInvoices)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iNVOICEROWsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridInvoice_Row)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iNVOICEROWBindingSource)).BeginInit();
             this.FilterByPriceGroup.SuspendLayout();
             this.rightHandSideBackPanel.SuspendLayout();
             this.SuspendLayout();
@@ -412,21 +412,72 @@
             this.balanceTitleLbl.Text = "Balance";
             this.balanceTitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // goBackToProductViewBtn
+            // 
+            this.goBackToProductViewBtn.AutoSize = true;
+            this.goBackToProductViewBtn.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.goBackToProductViewBtn.ForeColor = System.Drawing.Color.White;
+            this.goBackToProductViewBtn.Location = new System.Drawing.Point(13, 1108);
+            this.goBackToProductViewBtn.Name = "goBackToProductViewBtn";
+            this.goBackToProductViewBtn.Size = new System.Drawing.Size(252, 38);
+            this.goBackToProductViewBtn.TabIndex = 2;
+            this.goBackToProductViewBtn.Text = "Go To Product View";
+            this.goBackToProductViewBtn.UseVisualStyleBackColor = false;
+            this.goBackToProductViewBtn.Visible = false;
+            this.goBackToProductViewBtn.Click += new System.EventHandler(this.goBackToProductViewBtn_Click);
+            // 
             // FilterByDateGroup
             // 
-            this.FilterByDateGroup.AutoSize = true;
             this.FilterByDateGroup.Controls.Add(this.filterByDateTitleLbl);
-            this.FilterByDateGroup.Controls.Add(this.goBackToChoicesBtn);
+            this.FilterByDateGroup.Controls.Add(this.filterByDateBtn);
             this.FilterByDateGroup.Controls.Add(this.EndDateLbl);
             this.FilterByDateGroup.Controls.Add(this.dateTimePickerEnd);
             this.FilterByDateGroup.Controls.Add(this.startDateLbl);
             this.FilterByDateGroup.Controls.Add(this.dateTimePickerStart);
-            this.FilterByDateGroup.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FilterByDateGroup.Location = new System.Drawing.Point(0, 0);
+            this.FilterByDateGroup.Location = new System.Drawing.Point(26, 402);
             this.FilterByDateGroup.Name = "FilterByDateGroup";
-            this.FilterByDateGroup.Size = new System.Drawing.Size(286, 1353);
+            this.FilterByDateGroup.Size = new System.Drawing.Size(243, 369);
             this.FilterByDateGroup.TabIndex = 6;
             this.FilterByDateGroup.Visible = false;
+            // 
+            // filterByDateTitleLbl
+            // 
+            this.filterByDateTitleLbl.AutoSize = true;
+            this.filterByDateTitleLbl.Location = new System.Drawing.Point(37, 27);
+            this.filterByDateTitleLbl.Name = "filterByDateTitleLbl";
+            this.filterByDateTitleLbl.Size = new System.Drawing.Size(142, 25);
+            this.filterByDateTitleLbl.TabIndex = 6;
+            this.filterByDateTitleLbl.Text = "Filter By Date";
+            // 
+            // filterByDateBtn
+            // 
+            this.filterByDateBtn.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.filterByDateBtn.ForeColor = System.Drawing.Color.White;
+            this.filterByDateBtn.Location = new System.Drawing.Point(41, 300);
+            this.filterByDateBtn.Name = "filterByDateBtn";
+            this.filterByDateBtn.Size = new System.Drawing.Size(142, 42);
+            this.filterByDateBtn.TabIndex = 5;
+            this.filterByDateBtn.Text = "Filter";
+            this.filterByDateBtn.UseVisualStyleBackColor = false;
+            this.filterByDateBtn.Click += new System.EventHandler(this.filterByDateBtn_Click);
+            // 
+            // EndDateLbl
+            // 
+            this.EndDateLbl.AutoSize = true;
+            this.EndDateLbl.Location = new System.Drawing.Point(66, 195);
+            this.EndDateLbl.Name = "EndDateLbl";
+            this.EndDateLbl.Size = new System.Drawing.Size(101, 25);
+            this.EndDateLbl.TabIndex = 4;
+            this.EndDateLbl.Text = "End Date";
+            this.EndDateLbl.Click += new System.EventHandler(this.label3_Click_2);
+            // 
+            // dateTimePickerEnd
+            // 
+            this.dateTimePickerEnd.Location = new System.Drawing.Point(16, 232);
+            this.dateTimePickerEnd.Name = "dateTimePickerEnd";
+            this.dateTimePickerEnd.Size = new System.Drawing.Size(193, 31);
+            this.dateTimePickerEnd.TabIndex = 3;
+            this.dateTimePickerEnd.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // startDateLbl
             // 
@@ -536,7 +587,7 @@
             this.listViewItemsInCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewItemsInCart.HideSelection = false;
             this.listViewItemsInCart.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3});
+            listViewItem2});
             this.listViewItemsInCart.LabelWrap = false;
             this.listViewItemsInCart.Location = new System.Drawing.Point(0, 187);
             this.listViewItemsInCart.Name = "listViewItemsInCart";
@@ -1292,6 +1343,83 @@
             this.OrderHistoryGroupBox.Text = "Order History";
             this.OrderHistoryGroupBox.Visible = false;
             // 
+            // dataGridInvoice_Row
+            // 
+            this.dataGridInvoice_Row.AutoGenerateColumns = false;
+            this.dataGridInvoice_Row.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataGridInvoice_Row.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridInvoice_Row.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridInvoice_Row.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.PRO_ID,
+            this.INR_PRICE,
+            this.INR_QUANTITY,
+            this.INR_DISCOUNT,
+            this.INR_FINAL_PRICE});
+            this.dataGridInvoice_Row.DataSource = this.iNVOICEROWBindingSource;
+            this.dataGridInvoice_Row.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridInvoice_Row.GridColor = System.Drawing.Color.White;
+            this.dataGridInvoice_Row.Location = new System.Drawing.Point(10, 27);
+            this.dataGridInvoice_Row.Name = "dataGridInvoice_Row";
+            this.dataGridInvoice_Row.RowHeadersWidth = 82;
+            this.dataGridInvoice_Row.RowTemplate.Height = 33;
+            this.dataGridInvoice_Row.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridInvoice_Row.Size = new System.Drawing.Size(1271, 1128);
+            this.dataGridInvoice_Row.TabIndex = 1;
+            this.dataGridInvoice_Row.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "INV_ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "INV_ID";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 123;
+            // 
+            // PRO_ID
+            // 
+            this.PRO_ID.DataPropertyName = "PRO_ID";
+            this.PRO_ID.HeaderText = "PRO_ID";
+            this.PRO_ID.MinimumWidth = 10;
+            this.PRO_ID.Name = "PRO_ID";
+            this.PRO_ID.Width = 134;
+            // 
+            // INR_PRICE
+            // 
+            this.INR_PRICE.DataPropertyName = "INR_PRICE";
+            this.INR_PRICE.HeaderText = "INR_PRICE";
+            this.INR_PRICE.MinimumWidth = 10;
+            this.INR_PRICE.Name = "INR_PRICE";
+            this.INR_PRICE.Width = 167;
+            // 
+            // INR_QUANTITY
+            // 
+            this.INR_QUANTITY.DataPropertyName = "INR_QUANTITY";
+            this.INR_QUANTITY.HeaderText = "INR_QUANTITY";
+            this.INR_QUANTITY.MinimumWidth = 10;
+            this.INR_QUANTITY.Name = "INR_QUANTITY";
+            this.INR_QUANTITY.Width = 210;
+            // 
+            // INR_DISCOUNT
+            // 
+            this.INR_DISCOUNT.DataPropertyName = "INR_DISCOUNT";
+            this.INR_DISCOUNT.HeaderText = "INR_DISCOUNT";
+            this.INR_DISCOUNT.MinimumWidth = 10;
+            this.INR_DISCOUNT.Name = "INR_DISCOUNT";
+            this.INR_DISCOUNT.Width = 212;
+            // 
+            // INR_FINAL_PRICE
+            // 
+            this.INR_FINAL_PRICE.DataPropertyName = "INR_FINAL_PRICE";
+            this.INR_FINAL_PRICE.HeaderText = "INR_FINAL_PRICE";
+            this.INR_FINAL_PRICE.MinimumWidth = 10;
+            this.INR_FINAL_PRICE.Name = "INR_FINAL_PRICE";
+            this.INR_FINAL_PRICE.Width = 238;
+            // 
+            // iNVOICEROWBindingSource
+            // 
+            this.iNVOICEROWBindingSource.DataSource = typeof(TermProjectMCON368.INVOICE_ROW);
+            // 
             // dataGridDisplayInvoices
             // 
             this.dataGridDisplayInvoices.AutoGenerateColumns = false;
@@ -1318,23 +1446,45 @@
             this.dataGridDisplayInvoices.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridDisplayInvoices.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // iNVIDDataGridViewTextBoxColumn
+            // 
+            this.iNVIDDataGridViewTextBoxColumn.DataPropertyName = "INV_ID";
+            this.iNVIDDataGridViewTextBoxColumn.HeaderText = "INV_ID";
+            this.iNVIDDataGridViewTextBoxColumn.MinimumWidth = 10;
+            this.iNVIDDataGridViewTextBoxColumn.Name = "iNVIDDataGridViewTextBoxColumn";
+            this.iNVIDDataGridViewTextBoxColumn.Width = 123;
+            // 
+            // CUS_ID
+            // 
+            this.CUS_ID.DataPropertyName = "CUS_ID";
+            this.CUS_ID.HeaderText = "CUS_ID";
+            this.CUS_ID.MinimumWidth = 10;
+            this.CUS_ID.Name = "CUS_ID";
+            this.CUS_ID.Width = 133;
+            // 
+            // INV_DATE
+            // 
+            this.INV_DATE.DataPropertyName = "INV_DATE";
+            this.INV_DATE.HeaderText = "INV_DATE";
+            this.INV_DATE.MinimumWidth = 10;
+            this.INV_DATE.Name = "INV_DATE";
+            this.INV_DATE.Width = 159;
+            // 
+            // INV_TOTAL
+            // 
+            this.INV_TOTAL.DataPropertyName = "INV_TOTAL";
+            this.INV_TOTAL.HeaderText = "INV_TOTAL";
+            this.INV_TOTAL.MinimumWidth = 10;
+            this.INV_TOTAL.Name = "INV_TOTAL";
+            this.INV_TOTAL.Width = 171;
+            // 
+            // iNVOICEBindingSource2
+            // 
+            this.iNVOICEBindingSource2.DataSource = typeof(TermProjectMCON368.INVOICE);
+            // 
             // iNVOICEBindingSource
             // 
             this.iNVOICEBindingSource.DataSource = typeof(TermProjectMCON368.INVOICE);
-            // 
-            // goBackToProductViewBtn
-            // 
-            this.goBackToProductViewBtn.AutoSize = true;
-            this.goBackToProductViewBtn.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.goBackToProductViewBtn.ForeColor = System.Drawing.Color.White;
-            this.goBackToProductViewBtn.Location = new System.Drawing.Point(13, 1108);
-            this.goBackToProductViewBtn.Name = "goBackToProductViewBtn";
-            this.goBackToProductViewBtn.Size = new System.Drawing.Size(252, 38);
-            this.goBackToProductViewBtn.TabIndex = 2;
-            this.goBackToProductViewBtn.Text = "Go To Product View";
-            this.goBackToProductViewBtn.UseVisualStyleBackColor = false;
-            this.goBackToProductViewBtn.Visible = false;
-            this.goBackToProductViewBtn.Click += new System.EventHandler(this.goBackToProductViewBtn_Click);
             // 
             // iNVOICEROWsBindingSource
             // 
@@ -1393,194 +1543,55 @@
             // 
             this.iNVOICEBindingSource1.DataSource = typeof(TermProjectMCON368.INVOICE);
             // 
-            // iNVOICEBindingSource2
-            // 
-            this.iNVOICEBindingSource2.DataSource = typeof(TermProjectMCON368.INVOICE);
-            // 
-            // iNVIDDataGridViewTextBoxColumn
-            // 
-            this.iNVIDDataGridViewTextBoxColumn.DataPropertyName = "INV_ID";
-            this.iNVIDDataGridViewTextBoxColumn.HeaderText = "INV_ID";
-            this.iNVIDDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.iNVIDDataGridViewTextBoxColumn.Name = "iNVIDDataGridViewTextBoxColumn";
-            this.iNVIDDataGridViewTextBoxColumn.Width = 123;
-            // 
-            // CUS_ID
-            // 
-            this.CUS_ID.DataPropertyName = "CUS_ID";
-            this.CUS_ID.HeaderText = "CUS_ID";
-            this.CUS_ID.MinimumWidth = 10;
-            this.CUS_ID.Name = "CUS_ID";
-            this.CUS_ID.Width = 133;
-            // 
-            // INV_DATE
-            // 
-            this.INV_DATE.DataPropertyName = "INV_DATE";
-            this.INV_DATE.HeaderText = "INV_DATE";
-            this.INV_DATE.MinimumWidth = 10;
-            this.INV_DATE.Name = "INV_DATE";
-            this.INV_DATE.Width = 159;
-            // 
-            // INV_TOTAL
-            // 
-            this.INV_TOTAL.DataPropertyName = "INV_TOTAL";
-            this.INV_TOTAL.HeaderText = "INV_TOTAL";
-            this.INV_TOTAL.MinimumWidth = 10;
-            this.INV_TOTAL.Name = "INV_TOTAL";
-            this.INV_TOTAL.Width = 171;
-            // 
-            // dataGridInvoice_Row
-            // 
-            this.dataGridInvoice_Row.AutoGenerateColumns = false;
-            this.dataGridInvoice_Row.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dataGridInvoice_Row.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridInvoice_Row.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridInvoice_Row.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.PRO_ID,
-            this.INR_PRICE,
-            this.INR_QUANTITY,
-            this.INR_DISCOUNT,
-            this.INR_FINAL_PRICE});
-            this.dataGridInvoice_Row.DataSource = this.iNVOICEROWBindingSource;
-            this.dataGridInvoice_Row.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridInvoice_Row.GridColor = System.Drawing.Color.White;
-            this.dataGridInvoice_Row.Location = new System.Drawing.Point(10, 27);
-            this.dataGridInvoice_Row.Name = "dataGridInvoice_Row";
-            this.dataGridInvoice_Row.RowHeadersWidth = 82;
-            this.dataGridInvoice_Row.RowTemplate.Height = 33;
-            this.dataGridInvoice_Row.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridInvoice_Row.Size = new System.Drawing.Size(1271, 1128);
-            this.dataGridInvoice_Row.TabIndex = 1;
-            this.dataGridInvoice_Row.Visible = false;
-            // 
-            // iNVOICEROWBindingSource
-            // 
-            this.iNVOICEROWBindingSource.DataSource = typeof(TermProjectMCON368.INVOICE_ROW);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "INV_ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "INV_ID";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 123;
-            // 
-            // PRO_ID
-            // 
-            this.PRO_ID.DataPropertyName = "PRO_ID";
-            this.PRO_ID.HeaderText = "PRO_ID";
-            this.PRO_ID.MinimumWidth = 10;
-            this.PRO_ID.Name = "PRO_ID";
-            this.PRO_ID.Width = 134;
-            // 
-            // INR_PRICE
-            // 
-            this.INR_PRICE.DataPropertyName = "INR_PRICE";
-            this.INR_PRICE.HeaderText = "INR_PRICE";
-            this.INR_PRICE.MinimumWidth = 10;
-            this.INR_PRICE.Name = "INR_PRICE";
-            this.INR_PRICE.Width = 167;
-            // 
-            // INR_QUANTITY
-            // 
-            this.INR_QUANTITY.DataPropertyName = "INR_QUANTITY";
-            this.INR_QUANTITY.HeaderText = "INR_QUANTITY";
-            this.INR_QUANTITY.MinimumWidth = 10;
-            this.INR_QUANTITY.Name = "INR_QUANTITY";
-            this.INR_QUANTITY.Width = 210;
-            // 
-            // INR_DISCOUNT
-            // 
-            this.INR_DISCOUNT.DataPropertyName = "INR_DISCOUNT";
-            this.INR_DISCOUNT.HeaderText = "INR_DISCOUNT";
-            this.INR_DISCOUNT.MinimumWidth = 10;
-            this.INR_DISCOUNT.Name = "INR_DISCOUNT";
-            this.INR_DISCOUNT.Width = 212;
-            // 
-            // INR_FINAL_PRICE
-            // 
-            this.INR_FINAL_PRICE.DataPropertyName = "INR_FINAL_PRICE";
-            this.INR_FINAL_PRICE.HeaderText = "INR_FINAL_PRICE";
-            this.INR_FINAL_PRICE.MinimumWidth = 10;
-            this.INR_FINAL_PRICE.Name = "INR_FINAL_PRICE";
-            this.INR_FINAL_PRICE.Width = 238;
-            // 
-            // EndDateLbl
-            // 
-            this.EndDateLbl.AutoSize = true;
-            this.EndDateLbl.Location = new System.Drawing.Point(66, 195);
-            this.EndDateLbl.Name = "EndDateLbl";
-            this.EndDateLbl.Size = new System.Drawing.Size(101, 25);
-            this.EndDateLbl.TabIndex = 4;
-            this.EndDateLbl.Text = "End Date";
-            this.EndDateLbl.Click += new System.EventHandler(this.label3_Click_2);
-            // 
-            // dateTimePickerEnd
-            // 
-            this.dateTimePickerEnd.Location = new System.Drawing.Point(16, 232);
-            this.dateTimePickerEnd.Name = "dateTimePickerEnd";
-            this.dateTimePickerEnd.Size = new System.Drawing.Size(193, 31);
-            this.dateTimePickerEnd.TabIndex = 3;
-            this.dateTimePickerEnd.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
-            // 
-            // goBackToChoicesBtn
-            // 
-            this.goBackToChoicesBtn.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.goBackToChoicesBtn.ForeColor = System.Drawing.Color.White;
-            this.goBackToChoicesBtn.Location = new System.Drawing.Point(41, 300);
-            this.goBackToChoicesBtn.Name = "goBackToChoicesBtn";
-            this.goBackToChoicesBtn.Size = new System.Drawing.Size(142, 42);
-            this.goBackToChoicesBtn.TabIndex = 5;
-            this.goBackToChoicesBtn.Text = "Filter";
-            this.goBackToChoicesBtn.UseVisualStyleBackColor = false;
-            // 
-            // filterByDateTitleLbl
-            // 
-            this.filterByDateTitleLbl.AutoSize = true;
-            this.filterByDateTitleLbl.Location = new System.Drawing.Point(37, 27);
-            this.filterByDateTitleLbl.Name = "filterByDateTitleLbl";
-            this.filterByDateTitleLbl.Size = new System.Drawing.Size(142, 25);
-            this.filterByDateTitleLbl.TabIndex = 6;
-            this.filterByDateTitleLbl.Text = "Filter By Date";
-            // 
             // FilterByPriceGroup
             // 
             this.FilterByPriceGroup.AutoSize = true;
-            this.FilterByPriceGroup.Controls.Add(this.FilterByDateGroup);
-            this.FilterByPriceGroup.Controls.Add(this.textBox2);
-            this.FilterByPriceGroup.Controls.Add(this.textBox1);
-            this.FilterByPriceGroup.Controls.Add(this.filterByInvoiceTotal);
-            this.FilterByPriceGroup.Controls.Add(this.button1);
+            this.FilterByPriceGroup.Controls.Add(this.filterHighValue);
+            this.FilterByPriceGroup.Controls.Add(this.filterLowValue);
+            this.FilterByPriceGroup.Controls.Add(this.FilterByInvoiceTotal);
+            this.FilterByPriceGroup.Controls.Add(this.getInvoicesInPriceRangeBtn);
             this.FilterByPriceGroup.Controls.Add(this.HighLbl);
             this.FilterByPriceGroup.Controls.Add(this.LowLbl);
-            this.FilterByPriceGroup.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FilterByPriceGroup.Location = new System.Drawing.Point(0, 0);
+            this.FilterByPriceGroup.Location = new System.Drawing.Point(26, 18);
             this.FilterByPriceGroup.Name = "FilterByPriceGroup";
-            this.FilterByPriceGroup.Size = new System.Drawing.Size(286, 1353);
+            this.FilterByPriceGroup.Size = new System.Drawing.Size(246, 378);
             this.FilterByPriceGroup.TabIndex = 12;
             this.FilterByPriceGroup.Visible = false;
             // 
-            // filterByInvoiceTotal
+            // filterHighValue
             // 
-            this.filterByInvoiceTotal.AutoSize = true;
-            this.filterByInvoiceTotal.Location = new System.Drawing.Point(37, 24);
-            this.filterByInvoiceTotal.Name = "filterByInvoiceTotal";
-            this.filterByInvoiceTotal.Size = new System.Drawing.Size(146, 25);
-            this.filterByInvoiceTotal.TabIndex = 6;
-            this.filterByInvoiceTotal.Text = "Filter By Price";
-            this.filterByInvoiceTotal.Click += new System.EventHandler(this.label3_Click_3);
+            this.filterHighValue.Location = new System.Drawing.Point(30, 245);
+            this.filterHighValue.Name = "filterHighValue";
+            this.filterHighValue.Size = new System.Drawing.Size(158, 31);
+            this.filterHighValue.TabIndex = 8;
             // 
-            // button1
+            // filterLowValue
             // 
-            this.button1.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(41, 300);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(142, 33);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Filter";
-            this.button1.UseVisualStyleBackColor = false;
+            this.filterLowValue.Location = new System.Drawing.Point(30, 127);
+            this.filterLowValue.Name = "filterLowValue";
+            this.filterLowValue.Size = new System.Drawing.Size(158, 31);
+            this.filterLowValue.TabIndex = 7;
+            // 
+            // FilterByInvoiceTotal
+            // 
+            this.FilterByInvoiceTotal.Location = new System.Drawing.Point(37, 24);
+            this.FilterByInvoiceTotal.Name = "FilterByInvoiceTotal";
+            this.FilterByInvoiceTotal.Size = new System.Drawing.Size(151, 37);
+            this.FilterByInvoiceTotal.TabIndex = 6;
+            this.FilterByInvoiceTotal.Text = "Filter By Price";
+            this.FilterByInvoiceTotal.Click += new System.EventHandler(this.label3_Click_3);
+            // 
+            // getInvoicesInPriceRangeBtn
+            // 
+            this.getInvoicesInPriceRangeBtn.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.getInvoicesInPriceRangeBtn.ForeColor = System.Drawing.Color.White;
+            this.getInvoicesInPriceRangeBtn.Location = new System.Drawing.Point(41, 300);
+            this.getInvoicesInPriceRangeBtn.Name = "getInvoicesInPriceRangeBtn";
+            this.getInvoicesInPriceRangeBtn.Size = new System.Drawing.Size(142, 46);
+            this.getInvoicesInPriceRangeBtn.TabIndex = 5;
+            this.getInvoicesInPriceRangeBtn.Text = "Filter";
+            this.getInvoicesInPriceRangeBtn.UseVisualStyleBackColor = false;
+            this.getInvoicesInPriceRangeBtn.Click += new System.EventHandler(this.getInvoicesInPriceRange_Click);
             // 
             // HighLbl
             // 
@@ -1600,22 +1611,9 @@
             this.LowLbl.TabIndex = 1;
             this.LowLbl.Text = "Low";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(30, 127);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(158, 31);
-            this.textBox1.TabIndex = 7;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(30, 245);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(158, 31);
-            this.textBox2.TabIndex = 8;
-            // 
             // rightHandSideBackPanel
             // 
+            this.rightHandSideBackPanel.Controls.Add(this.FilterByDateGroup);
             this.rightHandSideBackPanel.Controls.Add(this.FilterByPriceGroup);
             this.rightHandSideBackPanel.Controls.Add(this.RightPanelShoppingCart);
             this.rightHandSideBackPanel.Location = new System.Drawing.Point(1763, 104);
@@ -1683,13 +1681,13 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.OrderHistoryGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridInvoice_Row)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iNVOICEROWBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDisplayInvoices)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iNVOICEROWsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridInvoice_Row)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iNVOICEROWBindingSource)).EndInit();
             this.FilterByPriceGroup.ResumeLayout(false);
             this.FilterByPriceGroup.PerformLayout();
             this.rightHandSideBackPanel.ResumeLayout(false);
@@ -1818,14 +1816,14 @@
         private System.Windows.Forms.Label EndDateLbl;
         private System.Windows.Forms.DateTimePicker dateTimePickerEnd;
         private System.Windows.Forms.Label filterByDateTitleLbl;
-        private System.Windows.Forms.Button goBackToChoicesBtn;
+        private System.Windows.Forms.Button filterByDateBtn;
         private System.Windows.Forms.Panel FilterByPriceGroup;
-        private System.Windows.Forms.Label filterByInvoiceTotal;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label FilterByInvoiceTotal;
+        private System.Windows.Forms.Button getInvoicesInPriceRangeBtn;
         private System.Windows.Forms.Label HighLbl;
         private System.Windows.Forms.Label LowLbl;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox filterLowValue;
+        private System.Windows.Forms.TextBox filterHighValue;
         private System.Windows.Forms.Panel rightHandSideBackPanel;
     }
 }

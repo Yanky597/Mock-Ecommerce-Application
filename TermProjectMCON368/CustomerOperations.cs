@@ -10,7 +10,7 @@ namespace TermProjectMCON368
     {
         public static DataClasses1DataContext dbConnection;
 
-        public static decimal getUsersBalance(String userID) 
+        public static decimal getUsersBalance(String userID)
         {
             return dbConnection.CUSTOMER_BALANCEs
                 .Where(customer => customer.CUS_ID == userID)
@@ -24,16 +24,22 @@ namespace TermProjectMCON368
                 .Select(customer => customer.BALANCE_DUE)?.First() ?? 0.00m;
         }
 
-        public static string getUsersFullName(String userID) 
+        public static string getUsersFullName(String userID)
         {
             return dbConnection.CUSTOMERs
               .Where(customer => customer.CUS_ID == userID)
               .Select(customer => customer.CUS_FNAME + " " + customer.CUS_LNAME).First();
         }
 
-        public static List<INVOICE> getUsersInvoices(String userID) 
+        public static List<INVOICE> getUsersInvoices(String userID)
         {
-            return dbConnection.INVOICEs.Where(user => user.CUS_ID == userID ).ToList();
+            return dbConnection.INVOICEs.Where(user => user.CUS_ID == userID).ToList();
+        }
+
+        public static List<INVOICE> getUsersInvoicesInPriceRange(String userID, decimal low, decimal high)
+        {
+            return dbConnection.INVOICEs
+                .Where(user => user.CUS_ID == userID && user.INV_TOTAL >= low && user.INV_TOTAL <= high).ToList();
         }
 
         public static List<INVOICE_ROW> getUsersInvoiceRows(String InvoiceID)
